@@ -15,13 +15,13 @@ import com.example.legutkoapplication.RefreshingActivity;
 import com.hitomi.cmlibrary.CircleMenu;
 import com.hitomi.cmlibrary.OnMenuSelectedListener;
 import com.hitomi.cmlibrary.OnMenuStatusChangeListener;
-
+import com.example.legutkoapplication.activity.ProductUpdateActivity;
 public class New_meniu extends AppCompatActivity {
-    String arrayName[] ={"Facebook",
-            "Twitter",
-            "Youtube",
-            "Windows",
-            "Drive",};
+    String arrayName[] ={"Strona główna",
+            "Wyszukaj Plantacji",
+            "Wyślij baze danych",
+            "Dodaj plantacje",
+            "Galeria",};
 
 
     @Override
@@ -50,6 +50,12 @@ public class New_meniu extends AppCompatActivity {
                             startActivity(new Intent(New_meniu.this, EmailAutoActivity.class));
 
                         }
+                        if(index==3){
+                            startActivity(new Intent(New_meniu.this, ProductAddActivity.class));
+                        }
+                        if(index==4){
+                            opengallery();
+                        }
                     }
                 }).setOnMenuStatusChangeListener(new OnMenuStatusChangeListener() {
 
@@ -63,5 +69,13 @@ public class New_meniu extends AppCompatActivity {
         });
 
 
+    }
+
+    public void opengallery(){
+        Intent intent = new Intent();
+        intent.setAction(android.content.Intent.ACTION_VIEW);
+        intent.setType("image/*");
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }
