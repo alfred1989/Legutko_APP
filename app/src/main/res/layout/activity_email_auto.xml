@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+
+    android:padding="16dp">
+
+<!--    <TextView-->
+<!--        android:id="@+id/etRecipient"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:hint="To"-->
+<!--        android:imeOptions="actionNext"-->
+
+<!--        android:inputType="textEmailAddress"-->
+<!--        android:text="hubert.gosciniak@legutko.com.pl" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/etContent"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="246dp"-->
+<!--        android:background="@android:color/transparent"-->
+<!--        android:gravity="start"-->
+<!--        android:hint="Message"-->
+<!--        android:imeOptions="actionDone"-->
+<!--        android:text="Baza danych została zaktualizowana" />-->
+
+
+</LinearLayout>

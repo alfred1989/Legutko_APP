@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="utf-8"?><!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+
+tools:context=".activity.ProductAddActivity">
+
+    <LinearLayout
+        android:id="@+id/tableLayouti"
+        android:layout_width="match_parent"
+        android:layout_height="103dp"
+        android:layout_gravity="center"
+        android:background="#3da549"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="1" />
+
+
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="1" />
+
+
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/button_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_camera_alt_black_24dp"
+            android:onClick="onCaptureButton" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="1070dp"
+        android:layout_below="@+id/tableLayouti"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp">
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            tools:ignore="MissingConstraints">
+
+
+            <TableRow
+                android:background="#3da549"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Nazwa" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:background="#DAE8FC"
+                android:padding="5dp">
+
+                <EditText
+                    android:id="@+id/name_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Name" />
+
+
+            </TableRow>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#3da549">
+
+                <TextView
+                    android:layout_width="102dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Producent" />
+
+                <TextView
+                    android:layout_width="163dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Partia nasion" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Numer reprodukcji" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Partia nasion wł." />
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#DAE8FC">
+
+                <EditText
+                    android:id="@+id/producer_add"
+                    android:layout_width="189dp"
+                    android:layout_height="wrap_content"
+                    android:text="Producer" />
+
+                <EditText
+                    android:id="@+id/batch_add"
+                    android:layout_width="161dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Batch" />
+
+                <EditText
+                    android:id="@+id/code_add"
+                    android:layout_width="136dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Reproduction number" />
+
+                <EditText
+                    android:id="@+id/own_seed_batch_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Reproduction number" />
+
+            </LinearLayout>
+
+             <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#3da549">
+
+                <TextView
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Gatunek Łaciński" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Odmiana" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Groupa EN" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#DAE8FC">
+
+                <EditText
+                    android:id="@+id/species_add"
+                    android:layout_width="244dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Species latin" />
+
+                <EditText
+                    android:id="@+id/variety_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Variety" />
+
+                <EditText
+                    android:id="@+id/group_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Group EN" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#3da549">
+
+                <TextView
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Kolor EN" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#DAE8FC">
+
+                <EditText
+                    android:id="@+id/color_add"
+                    android:layout_width="273dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Color EN " />
+
+            </LinearLayout>
+            ---------------------------------------------------------------------------------
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#3da549">
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Subgroupa EN" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Szacowany plon" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#DAE8FC">
+
+
+
+                <EditText
+                    android:id="@+id/subgroup_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Subgroup EN" />
+
+                <EditText
+                    android:id="@+id/estimated_crop_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Estimated crop" />
+            </LinearLayout>
+
+
+            <TableRow
+                android:background="#3da549"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Opis" />
+
+            </TableRow>
+
+            <TableRow
+                android:background="#DAE8FC"
+                android:padding="5dp">
+
+                <EditText
+                    android:id="@+id/description_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Batch" />
+
+            </TableRow>
+
+
+            <TableRow
+                android:background="#DAE8FC"
+                android:padding="5dp">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Symbol:" />
+
+                <TextView
+                    android:id="@+id/symbol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Symbol" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:background="#DAE8FC"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/descriptionInEnglish"
+                    android:text="Description"
+                    android:textColor="#DAE8FC" />
+
+                <TextView
+                    android:id="@+id/d"
+                    android:inputType="textPersonName" />
+
+
+            </TableRow>
+
+
+            ------------------------------------------------------------------------------------------------
+
+            <TableRow
+                android:background="#3da549"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Off Obecność" />
+
+            </TableRow>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#DAE8FC">
+
+                <Switch
+                    android:id="@+id/switch_off_presence"
+                    android:layout_width="262dp"
+
+                    android:layout_height="41dp" />
+
+
+                <EditText
+                    android:id="@+id/off_presence_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="50dp"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:inputType="textPersonName"
+                    android:text="Off Obecność" />
+
+                <EditText
+                    android:id="@+id/off_percentage_add"
+                    android:layout_width="337dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="100dp"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:hint="% off"
+                    android:inputType="textPersonName" />
+            </LinearLayout>
+            ------------------------------------------------------------------------------------------------
+
+            <TableRow
+                android:background="#3da549"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Plantacja TYPOWA / NIETYPOWA" />
+
+            </TableRow>
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#DAE8FC">
+
+                <Switch
+                    android:id="@+id/switch_standard_plantation"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="150dp"
+                    android:text="Nietypowa" />
+
+                <EditText
+                    android:id="@+id/standard_plantation_add"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Standard plantation" />
+
+                <Switch
+                    android:id="@+id/switch_standard_plantation_typical"
+                    android:layout_width="284dp"
+                    android:layout_height="66dp"
+                    android:layout_marginRight="150dp"
+                    android:text="Typowa" />
+            </TableLayout>
+
+            <TableRow
+                android:background="#3da549"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Open Gallery" />
+
+            </TableRow>
+            <TableRow
+                android:background="#3da549"
+                android:padding="5dp">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="open_gallery_app"
+                    android:layout_weight="1"
+                    android:text="Open Gallery" />
+
+            </TableRow>
+
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="418dp"
+                android:layout_height="450dp"
+                android:layout_margin="160dp"
+                android:rotation="90" />
+
+
+            <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context="com.GallegryImgActivity">
+
+
+                <RelativeLayout
+                    android:background="@android:color/transparent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/empty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/empty"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+            </FrameLayout>
+
+            <TableRow
+                android:background="@android:color/transparent"
+                android:padding="5dp">
+
+                <TextView
+                    android:background="@android:color/transparent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+            </TableRow>
+
+            <TableRow
+                android:background="@android:color/transparent"
+                android:padding="5dp">
+
+                <TextView
+                    android:textColor="@android:color/transparent"
+
+                    android:id="@+id/comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Comment" />
+
+            </TableRow>
+            <TableRow
+                android:background="@android:color/transparent"
+                android:padding="5dp">
+
+
+                <TextView
+                    android:textColor="@android:color/transparent"
+                    android:id="@+id/commentaryInPL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Comment" />
+
+            </TableRow>
+            <TableRow
+
+                android:background="@android:color/transparent"
+                android:padding="5dp">
+
+                <TextView
+                    android:textColor="@android:color/transparent"
+                    android:id="@+id/commentPL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Description" />
+            </TableRow>
+            <TextView
+                android:id="@+id/plantation_id"
+                android:background="@android:color/transparent"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+
+        </TableLayout>
+        ------------------------------------------------------------------------------------------------
+
+
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

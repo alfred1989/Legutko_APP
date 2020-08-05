@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/item_searchProducent"
+        android:icon="@drawable/ic_search"
+        android:title="Search"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="always|collapseActionView"/>
+
+
+
+    <!--    <item-->
+    <!--        android:id="@+id/item_search_name"-->
+    <!--        android:icon="@drawable/ic_search"-->
+    <!--        android:title="Search"-->
+    <!--        app:actionViewClass="android.widget.SearchView"-->
+    <!--        app:showAsAction="always|collapseActionView"/>-->
+
+
+    <!--        <item-->
+    <!--        android:id="@+id/item_save"-->
+    <!--        android:icon="@drawable/addraport"-->
+    <!--        android:title="Search"-->
+    <!--        android:onClick="saveSelectedProducts"-->
+    <!--        app:actionViewClass="android.widget.SearchView"-->
+    <!--        app:showAsAction="always|collapseActionView">-->
+
+    <!--    </item>-->
+    <!--    <item android:title="Search"-->
+    <!--        android:id="@+id/item_search_name"-->
+    <!--        android:icon="@drawable/ic_search"-->
+    <!--        app:actionViewClass="android.widget.SearchView"-->
+    <!--        />-->
+    <!--    <item android:title="Search"-->
+    <!--        android:id="@+id/item_search"-->
+    <!--        app:actionViewClass="android.widget.SearchView"-->
+    <!--       />-->
+
+</menu>

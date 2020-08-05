@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".activity.PushEmailActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="To:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <EditText
+        android:id="@+id/edit_text_to"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:text="hubert.gosciniak@legutko.com.pl" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Subject:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <TextView
+        android:id="@+id/edit_text_subject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aktualizacja bazy/Base update"
+        android:inputType="textEmailSubject" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Message:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <EditText
+        android:id="@+id/edit_text_message"
+        android:layout_width="376dp"
+        android:layout_height="125dp"
+        android:gravity="start|top"
+        android:lines="10" />
+
+<!--    <Button-->
+<!--        android:id="@+id/button_send"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="133dp"-->
+<!--        android:background="@drawable/ic_send_black_24dp"-->
+<!--        android:text="send" />-->
+<!--    <Button-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/sprawdzam"-->
+<!--        android:onClick="sprawdzam"/>-->
+
+<!--    <Switch-->
+<!--        android:id="@+id/anny"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_width="272dp"-->
+<!--        android:layout_height="wrap_content"-->
+
+<!--        android:text=" Anny:-->
+<!--                        annylu89@hotmail.com" />-->
+<!--    <Switch-->
+<!--        android:id="@+id/bright"-->
+<!--        android:layout_width="272dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:text="Bright seeds:         info@brightseeds.com.cn"-->
+<!--        android:layout_height="wrap_content" />-->
+<!--    <Switch-->
+<!--        android:id="@+id/sherry"-->
+<!--        android:layout_width="272dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:text="Sherry Han:                    sherryhan@snseeds.com"-->
+<!--        android:layout_height="wrap_content" />-->
+<!--    <Switch-->
+<!--    android:id="@+id/shenfei79"-->
+<!--        android:layout_width="272dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:text="Shenfei79:-->
+<!--                    shenfei79@vip.163.com"-->
+<!--    android:layout_height="wrap_content" />-->
+<!--    <Switch-->
+<!--        android:id="@+id/dga"-->
+<!--        android:layout_width="272dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:text="DGA:           dgagrorobert@vip.sina.com"-->
+<!--        android:layout_height="wrap_content" />-->
+<!--&lt;!&ndash;    <Switch&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/pra"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="272dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:text="prakashbng@vokkalseeds.com, aswath@vokkalseeds.com"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="wrap_content" />&ndash;&gt;-->
+
+
+
+</LinearLayout>
+
+
