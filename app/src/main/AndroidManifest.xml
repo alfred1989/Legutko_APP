@@ -45,7 +45,8 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.New_meniu"></activity>
+        <activity android:name=".activity.Confirmation_of_sending_the_message"></activity>
+        <activity android:name=".activity.New_meniu" />
         <activity android:name="com.GallegryImgActivity" />
         <activity android:name=".MainHelpers.EmailAutoActivity" />
         <activity android:name=".MainActivity">

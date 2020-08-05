@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.legutkoapplication.MainHelpers.EmailAutoActivity;
 import com.example.legutkoapplication.MenuActivity;
 import com.example.legutkoapplication.R;
 import com.example.legutkoapplication.RefreshingActivity;
@@ -39,13 +40,14 @@ public class New_meniu extends AppCompatActivity {
                     public void onMenuSelected(int index) {
                         Toast.makeText(New_meniu.this, arrayName[index], Toast.LENGTH_SHORT).show();
                         System.out.println(index + " index");
-                        if(index==4){
+                        if(index==1){
 
                             startActivity(new Intent(New_meniu.this, ProductListActivity.class));
 
                         }
                         if(index==2){
-                            startActivity(new Intent(New_meniu.this, MenuActivity.class));
+                            //wysyłanie bazy meilem
+                            startActivity(new Intent(New_meniu.this, EmailAutoActivity.class));
 
                         }
                     }

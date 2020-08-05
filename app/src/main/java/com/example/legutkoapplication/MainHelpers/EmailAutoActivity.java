@@ -7,8 +7,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 
-import com.example.legutkoapplication.MenuActivity;
 import com.example.legutkoapplication.R;
+import com.example.legutkoapplication.activity.Confirmation_of_sending_the_message;
 
 import java.io.File;
 
@@ -23,12 +23,16 @@ public class EmailAutoActivity extends AppCompatActivity {
         sendMessage();
 //        sendMessageII();
 //        sendMessageIII();
-        startActivity(new Intent(EmailAutoActivity.this, MenuActivity.class));
+        boolean wynik =true;
+        if(sendMessage()==wynik)
+        startActivity(new Intent(EmailAutoActivity.this, Confirmation_of_sending_the_message.class));
+
+        System.out.println("udało sie wyslac");
     }
 
-    private void sendMessage() {
+    private boolean sendMessage() {
         final String login = "legutkodatatab@gmail.com";
-        final String password = "12345Legutko?";
+        final String password = "Jutrosin63930?";
         final String etContent = "Baza danych została zaktualizowana - uzytkownik II";
         final String etRecipient = "hubert.gosciniak@legutko.com.pl";
         String filename = "data_plantacje_Polskie.xls";
@@ -58,6 +62,8 @@ public class EmailAutoActivity extends AppCompatActivity {
             }
         });
         sender.start();
+
+        return true;
     }
 //    private void sendMessageII() {
 //        final String login = "legutkodatatab@gmail.com";
