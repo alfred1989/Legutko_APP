@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:stretchColumns="1">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_marginRight="15dp"
+            android:text="Nazwa" />
+
+        <TextView
+            android:id="@+id/name"
+            android:text="Name"
+            android:textSize="15dp"
+
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_marginRight="15dp"
+            android:text="Manufacturer" />
+
+        <TextView
+            android:id="@+id/producer"
+            android:text="Producer"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_marginRight="15dp"
+            android:text="Reproduction Number" />
+
+        <TextView
+            android:id="@+id/code"
+            android:text="Code"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_marginRight="15dp"
+            android:text="Type" />
+
+
+        <TextView
+            android:id="@+id/species"
+            android:text="Species" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_marginRight="15dp"
+            android:text="Growing area" />
+
+
+        <TextView
+            android:id="@+id/commentaryInPL"
+            android:text="Growing area" />
+    </TableRow>
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_marginRight="15dp"
+            android:text="Type of crop Typical / Unusual" />
+
+        <TextView
+            android:id="@+id/standard_plantation"
+            android:text="Standard plantation"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_marginRight="15dp"
+            android:text="Party" />
+        <TextView
+            android:id="@+id/batch"
+            android:layout_marginRight="15dp"
+            android:text="Party" />
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_marginRight="15dp"
+            android:text="Sowing location" />
+
+
+        <TextView
+            android:id="@+id/comment"
+            android:text="Growing area" />
+    </TableRow>
+</TableLayout>

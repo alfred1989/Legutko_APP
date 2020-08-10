@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "4043715777",
+    "firebase_url": "https://legutko-chiny.firebaseio.com",
+    "project_id": "legutko-chiny",
+    "storage_bucket": "legutko-chiny.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:4043715777:android:90ed5cf608122b6910d040",
+        "android_client_info": {
+          "package_name": "com.example.legutkoapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "4043715777-mivdj4omj34imnop0lu19dl76glb7til.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6i5GadV6y4WmxwIucwt8hFAtjFdWJgxU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "4043715777-mivdj4omj34imnop0lu19dl76glb7til.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
