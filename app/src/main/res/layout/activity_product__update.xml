@@ -103,9 +103,15 @@
                     android:layout_weight="1"
                     android:text="Nazwa:" />
 
-
+                <EditText
+                    android:id="@+id/name"
+                    android:text="Name"
 
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:textSize="15dp" />
+
+
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                     android:textSize="15dp" />
 
             </TableRow>
@@ -116,14 +122,6 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp">
 
-
-
-                <EditText
-                    android:id="@+id/name"
-                    android:text="Name"
-
-                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                    android:textSize="15dp" />
 
             </TableRow>
 
@@ -139,23 +137,13 @@
                     android:layout_marginRight="15dp"
                     android:text="Producent:" />
 
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:background="#DAE8FC"
-                android:padding="5dp">
-
-
                 <EditText
                     android:id="@+id/producer"
                     android:layout_width="198dp"
                     android:text="Producer"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+
             </TableRow>
 
 
@@ -169,23 +157,17 @@
                     android:layout_marginRight="15dp"
                     android:text="Numer reprodukcji:" />
 
-
-            </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp">
-
-
-
                 <EditText
                     android:id="@+id/code"
+                    android:layout_width="490dp"
                     android:text="Code"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+
             </TableRow>
 
------------------------------------------------
+            -----------------------------------------------
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -471,7 +453,7 @@
                     android:text="Symbol:" />
 
 
-              
+
             </TableRow>
 
 

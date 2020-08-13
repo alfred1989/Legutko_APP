@@ -51,6 +51,11 @@ public class New_meniu extends AppCompatActivity {
                             startActivity(new Intent(New_meniu.this, EmailAutoActivity.class));
 
                         }
+                        if(index==3){
+                            //wysyłanie bazy meilem
+                            startActivity(new Intent(New_meniu.this, ProductAddActivity.class));
+
+                        }
                     }
                 }).setOnMenuStatusChangeListener(new OnMenuStatusChangeListener() {
 

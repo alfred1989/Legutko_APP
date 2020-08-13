@@ -185,7 +185,7 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         plantationIdField = findViewById(R.id.plantation_id);
         commentaryInPLField = findViewById(R.id.commentaryInPL);
         descriptionInEnglishField = findViewById(R.id.descriptionInEnglish);
-        dField = findViewById(R.id.d);
+//        dField = findViewById(R.id.d);
         commentPLField = findViewById(R.id.commentPL);
         symbolField = findViewById(R.id.symbol);
         own_seed_batchField = findViewById(R.id.own_seed_batch);
