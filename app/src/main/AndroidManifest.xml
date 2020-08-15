@@ -45,7 +45,8 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.LoginActivity"></activity>
+        <activity android:name=".activity.New_view_Activiti"></activity>
+        <activity android:name="com.LoginActivity" />
         <activity
             android:name=".ui.login.LoginActivity"
             android:label="@string/title_activity_login" />

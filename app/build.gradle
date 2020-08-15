@@ -28,7 +28,7 @@ repositories {
 }
 dependencies {
     compile 'codelight.studios:android-smart-login:1.2'
-
+    implementation 'com.evrencoskun.library:tableview:0.8.9.2'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.annotation:annotation:1.1.0'
