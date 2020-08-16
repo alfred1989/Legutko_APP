@@ -25,8 +25,10 @@ android {
 repositories {
     mavenCentral()
     maven { url 'https://maven.google.com' }
+    maven { url "https://jitpack.io" }
 }
 dependencies {
+    implementation 'com.bestsoft32.tayyab:tt-fancy-gif-dialog:1.0.2'
     compile 'codelight.studios:android-smart-login:1.2'
     implementation 'com.evrencoskun.library:tableview:0.8.9.2'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'

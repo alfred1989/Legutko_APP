@@ -1,454 +1,752 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal"
-    tools:context=".MainActivity">
+    android:layout_height="wrap_content"
+    android:fillViewport="false">
 
 
-    <TableLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:padding="8dp"
-        android:stretchColumns="1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 
-        -----------------------------------------------------------------------------------------
-
-
-        <TableRow
-            android:id="@+id/tableRow4"
+        <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
 
-            <TextView
-                android:id="@+id/textView9"
+            android:padding="8dp"
+            android:stretchColumns="1">
+
+
+            -----------------------------------------------------------------------------------------
+
+
+            <TableRow
+                android:id="@+id/tableRow4"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:gravity="center"
-                android:text="Szczegóły Plantacji"
-                android:textColor="#000000"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                android:typeface="serif"></TextView>
-        </TableRow>
-        -----------------------------------------------------------------------------------------
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
 
-        <TableLayout
-            android:id="@+id/tabla_cuerpo"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#DAE8FC"
-            android:paddingLeft="4dp"
-            android:paddingRight="4dp">
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Szczegóły Plantacji"
+                    android:textColor="#000000"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:typeface="serif"></TextView>
+            </TableRow>
+            -----------------------------------------------------------------------------------------
+
+            <TableLayout
+                android:id="@+id/tabla_cuerpo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#DAE8FC"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#3da549">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Nazwa"
+                        android:textColor="#000000"
+                        android:textSize="16dp"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Producent"
+                        android:textColor="#000000"
+                        android:textSize="16dp"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Numer reprodukcji"
+                        android:textColor="#000000"
+                        android:textSize="16dp"></TextView>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="name ID"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#000000"></EditText>
+
+                    <EditText
+                        android:id="@+id/producer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="producent ID"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#000000"></EditText>
+
+                    <EditText
+                        android:id="@+id/code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="numert reprodukcji OD"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#000000"></EditText>
+                </TableRow>
+            </TableLayout>
+
+            <Space android:layout_height="12dp"></Space>
+            -----------------------------------------------------------------------------------------
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#DAE8FC"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#3da549">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Nasiona Własne"
+                        android:textColor="#000000"
+                        android:textSize="16dp"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Nazwa łacinska"
+                        android:textColor="#000000"
+                        android:textSize="16dp"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Odmiana"
+                        android:textColor="#000000"
+                        android:textSize="16dp"></TextView>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/own_seed_batch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="nasiona wlasne ID"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#000000"></EditText>
+
+                    <EditText
+                        android:id="@+id/species"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="nazwa łacinska ID"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#000000"></EditText>
+
+                    <EditText
+                        android:id="@+id/variety"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="numert reprodukcji OD"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#000000"></EditText>
+                </TableRow>
+            </TableLayout>
+
+            <Space android:layout_height="12dp"></Space>
+            -----------------------------------------------------------------------------------------
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#DAE8FC"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#3da549">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Partia"
+                        android:textColor="#000000"
+                        android:textSize="16dp"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Grup EN"
+                        android:textColor="#000000"
+                        android:textSize="16dp"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Subgrupa EN"
+                        android:textColor="#000000"
+                        android:textSize="16dp"></TextView>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/batch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="partia ID"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#000000"></EditText>
+
+                    <EditText
+                        android:id="@+id/group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="grupa ID"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#000000"></EditText>
+
+                    <EditText
+                        android:id="@+id/subgroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="subgrupa ID"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#000000"></EditText>
+                </TableRow>
+            </TableLayout>
+
+            <Space android:layout_height="12dp"></Space>
+            -----------------------------------------------------------------------------------------
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#DAE8FC"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#3da549">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Kolor"
+                        android:textColor="	#000000"
+                        android:textSize="16dp"></TextView>
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Szacowany plon"
+                        android:textColor="	#000000"
+                        android:textSize="16dp"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Symbol"
+                        android:textColor="	#000000"
+                        android:textSize="16dp"></TextView>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="kolor ID"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="	#000000"></EditText>
+
+                    <EditText
+                        android:id="@+id/estimated_crop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="szacowany plon ID"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="	#000000"></EditText>
+
+                    <EditText
+                        android:id="@+id/symbol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="subgrupa ID"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="	#000000"></EditText>
+                </TableRow>
+            </TableLayout>
+
+            <Space android:layout_height="12dp"></Space>
+            -----------------------------------------------------------------------------------------
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#DAE8FC"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#3da549">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Plantacja Typowa/Nietypowa "
+                        android:textColor="	#000000"
+                        android:textSize="16dp"></TextView>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Switch
+                        android:id="@+id/switch_standard_plantation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Nietypowa"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="	#000000"></Switch>
+
+
+                </TableRow>
+
+
+            </TableLayout>
+
+            <Space android:layout_height="12dp"></Space>
+            -----------------------------------------------------------------------------------------
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#DAE8FC"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#3da549">
+
+                    <EditText
+                        android:id="@+id/standard_plantation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Plantacja Typowa/Nietypowa "
+                        android:textColor="#000000"
+                        android:textSize="16dp"></EditText>
+
+
+                </TableRow>
+
+            </TableLayout>
+
+            <Space android:layout_height="12dp"></Space>
+            -----------------------------------------------------------------------------------------
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#DAE8FC"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#3da549">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Opis plantacji "
+                        android:textColor="	#000000"
+                        android:textSize="16dp"></TextView>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Typowa"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="	#000000"></EditText>
+
+
+                </TableRow>
+
+
+            </TableLayout>
+
+
+            -----------------------------------------------------------------------------------------
+
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="139dp"
+                android:layout_marginTop="10dp"
+                android:background="#3da549"
+                android:padding="5dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="Nazwa"
-                    android:textColor="#000000"
-                    android:textSize="16dp"></TextView>
+                    android:text="Off Obecność: " />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="Producent"
-                    android:textColor="#000000"
-                    android:textSize="16dp"></TextView>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="Numer reprodukcji"
-                    android:textColor="#000000"
-                    android:textSize="16dp"></TextView>
             </TableRow>
 
-            <TableRow
-                android:id="@+id/tableRow2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="name ID"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="#000000"></EditText>
-
-                <EditText
-                    android:id="@+id/producer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="producent ID"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="#000000"></EditText>
-
-                <EditText
-                    android:id="@+id/code"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="numert reprodukcji OD"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="#000000"></EditText>
-            </TableRow>
-        </TableLayout>
-
-        <Space android:layout_height="12dp"></Space>
-        -----------------------------------------------------------------------------------------
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#DAE8FC"
-            android:paddingLeft="4dp"
-            android:paddingRight="4dp">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="Nasiona Własne"
-                    android:textColor="#000000"
-                    android:textSize="16dp"></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="Nazwa łacinska"
-                    android:textColor="#000000"
-                    android:textSize="16dp"></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="Odmiana"
-                    android:textColor="#000000"
-                    android:textSize="16dp"></TextView>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/own_seed_batch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="nasiona wlasne ID"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="#000000"></EditText>
-
-                <EditText
-                    android:id="@+id/species"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="nazwa łacinska ID"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="#000000"></EditText>
-
-                <EditText
-                    android:id="@+id/variety"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="numert reprodukcji OD"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="#000000"></EditText>
-            </TableRow>
-        </TableLayout>
-
-        <Space android:layout_height="12dp"></Space>
-        -----------------------------------------------------------------------------------------
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#DAE8FC"
-            android:paddingLeft="4dp"
-            android:paddingRight="4dp">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="Partia"
-                    android:textColor="#000000"
-                    android:textSize="16dp"></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="Grup EN"
-                    android:textColor="#000000"
-                    android:textSize="16dp"></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="Subgrupa EN"
-                    android:textColor="#000000"
-                    android:textSize="16dp"></TextView>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/batch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="partia ID"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="#000000"></EditText>
-
-                <EditText
-                    android:id="@+id/group"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="grupa ID"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="#000000"></EditText>
-
-                <EditText
-                    android:id="@+id/subgroup"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="subgrupa ID"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="#000000"></EditText>
-            </TableRow>
-        </TableLayout>
-
-        <Space android:layout_height="12dp"></Space>
-        -----------------------------------------------------------------------------------------
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#DAE8FC"
-            android:paddingLeft="4dp"
-            android:paddingRight="4dp">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="Kolor"
-                    android:textColor="	#000000"
-                    android:textSize="16dp"></TextView>
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="Szacowany plon"
-                    android:textColor="	#000000"
-                    android:textSize="16dp"></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="Symbol"
-                    android:textColor="	#000000"
-                    android:textSize="16dp"></TextView>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/color"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="kolor ID"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="	#000000"></EditText>
-
-                <EditText
-                    android:id="@+id/estimated_crop"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="szacowany plon ID"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="	#000000"></EditText>
-
-                <EditText
-                    android:id="@+id/symbol"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="subgrupa ID"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="	#000000"></EditText>
-            </TableRow>
-        </TableLayout>
-
-        <Space android:layout_height="12dp"></Space>
-        -----------------------------------------------------------------------------------------
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#DAE8FC"
-            android:paddingLeft="4dp"
-            android:paddingRight="4dp">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="Plantacja Typowa/Nietypowa "
-                    android:textColor="	#000000"
-                    android:textSize="16dp"></TextView>
-
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:background="#DAE8FC">
 
                 <Switch
-                    android:id="@+id/switch_standard_plantation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="Nietypowa"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="	#000000"></Switch>
+                    android:id="@+id/switch_off_presence"
+                    android:layout_width="105dp"
 
+                    android:layout_height="41dp" />
 
-            </TableRow>
-
-
-        </TableLayout>
-
-        <Space android:layout_height="12dp"></Space>
-        -----------------------------------------------------------------------------------------
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#DAE8FC"
-            android:paddingLeft="4dp"
-            android:paddingRight="4dp">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/standard_plantation"
+                    android:id="@+id/off_presence"
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="50dp"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:inputType="textPersonName"
+                    android:text="Off Presence" />
+
+                <EditText
+                    android:id="@+id/off_percentage"
+                    android:layout_width="320dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="100dp"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:hint="% off"
+                    android:inputType="textPersonName" />
+            </LinearLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#DAE8FC"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="112dp"
+                    android:background="#3da549">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        />
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/ic_save_black_24dp"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:textColor="	#000000"
+                        android:onClick="saveAndExportFile"
+                        android:textSize="16dp"></Button>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        />
+
+                    <Button
+                        android:background="@drawable/ic_camera_alt_black_24dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:textColor="	#000000"
+                        android:textSize="16dp"></Button>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        />
+                    <Button
+                        android:background="@drawable/ic_gallery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:textColor="	#000000"
+                        android:textSize="16dp"></Button>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        />
+                </TableRow>
+            </TableLayout>
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="418dp"
+                android:layout_height="450dp"
+                android:layout_margin="160dp"
+                android:rotation="90" />
+
+
+            <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context="com.GallegryImgActivity">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent">
+
+
+                    <!--                    </com.utils.AutoFitRecyclerView>-->
+                </RelativeLayout>
+
+
+                <EditText
+                    android:id="@+id/empty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+            </FrameLayout>
+
+            <TableRow
+                android:background="@android:color/transparent"
+                android:padding="5dp">
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="Plantacja Typowa/Nietypowa "
-                    android:textColor="#000000"
-                    android:textSize="16dp"></EditText>
-
+                    android:background="@android:color/transparent" />
 
             </TableRow>
+
+            <TableRow
+                android:background="@android:color/transparent"
+                android:padding="5dp">
+
+                <EditText
+                    android:id="@+id/comment"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Comment"
+                    android:textColor="@android:color/transparent" />
+
+            </TableRow>
+
+            <TableRow
+                android:background="@android:color/transparent"
+                android:padding="5dp">
+
+
+                <EditText
+                    android:id="@+id/commentaryInPL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="Comment"
+                    android:textColor="@android:color/transparent" />
+
+            </TableRow>
+
+            <TableRow
+
+                android:background="@android:color/transparent"
+                android:padding="5dp">
+
+                <EditText
+                    android:id="@+id/commentPL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="Description"
+                    android:textColor="@android:color/transparent" />
+            </TableRow>
+
+            <EditText
+                android:id="@+id/plantation_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/descriptionInEnglish"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="TextView" />
 
             <TableRow
                 android:layout_width="match_parent"
@@ -459,6 +757,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@android:color/transparent"
                     android:gravity="center"
                     android:padding="5dp"
                     android:text="Typowa"
@@ -470,221 +769,5 @@
 
 
         </TableLayout>
-
-        <Space android:layout_height="12dp"></Space>
-        -----------------------------------------------------------------------------------------
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#DAE8FC"
-            android:paddingLeft="4dp"
-            android:paddingRight="4dp">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="Opis plantacji "
-                    android:textColor="	#000000"
-                    android:textSize="16dp"></TextView>
-
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/description"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="Typowa"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="	#000000"></EditText>
-
-
-            </TableRow>
-
-
-        </TableLayout>
-
-
-        -----------------------------------------------------------------------------------------
-
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="139dp"
-            android:layout_marginTop="10dp"
-            android:background="#DAE8FC"
-            android:padding="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Off Obecność: " />
-
-
-        </TableRow>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:background="#DAE8FC">
-
-            <Switch
-                android:id="@+id/switch_off_presence"
-                android:layout_width="105dp"
-
-                android:layout_height="41dp" />
-
-
-            <EditText
-                android:id="@+id/off_presence"
-                android:layout_width="wrap_content"
-                android:layout_height="70dp"
-                android:layout_marginLeft="50dp"
-                android:ems="10"
-                android:enabled="false"
-                android:inputType="textPersonName"
-                android:text="Off Presence" />
-
-            <EditText
-                android:id="@+id/off_percentage"
-                android:layout_width="320dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="100dp"
-                android:ems="10"
-                android:enabled="false"
-                android:hint="% off"
-                android:inputType="textPersonName" />
-        </LinearLayout>
-
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="418dp"
-            android:layout_height="450dp"
-            android:layout_margin="160dp"
-            android:rotation="90" />
-
-
-        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            tools:context="com.GallegryImgActivity">
-
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/transparent">
-
-
-                <!--                    </com.utils.AutoFitRecyclerView>-->
-            </RelativeLayout>
-
-
-            <EditText
-                android:id="@+id/empty"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:visibility="gone" />
-
-        </FrameLayout>
-
-        <TableRow
-            android:background="@android:color/transparent"
-            android:padding="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/transparent" />
-
-        </TableRow>
-
-        <TableRow
-            android:background="@android:color/transparent"
-            android:padding="5dp">
-
-            <EditText
-                android:id="@+id/comment"
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Comment"
-                android:textColor="@android:color/transparent" />
-
-        </TableRow>
-
-        <TableRow
-            android:background="@android:color/transparent"
-            android:padding="5dp">
-
-
-            <EditText
-                android:id="@+id/commentaryInPL"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:text="Comment"
-                android:textColor="@android:color/transparent" />
-
-        </TableRow>
-
-        <TableRow
-
-            android:background="@android:color/transparent"
-            android:padding="5dp">
-
-            <EditText
-                android:id="@+id/commentPL"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:text="Description"
-                android:textColor="@android:color/transparent" />
-        </TableRow>
-
-        <EditText
-            android:id="@+id/plantation_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:text="TextView" />
-
-        <EditText
-            android:id="@+id/descriptionInEnglish"
-            android:layout_width="match_parent"
-
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:text="TextView" />
-
-    </TableLayout>
-
+    </LinearLayout>
 </ScrollView>

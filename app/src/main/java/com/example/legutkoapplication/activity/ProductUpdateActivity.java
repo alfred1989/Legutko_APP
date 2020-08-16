@@ -44,7 +44,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.ImageDisplay;
 import com.ajts.androidmads.library.SQLiteToExcel;
+import com.bestsoft32.tt_fancy_gif_dialog_lib.TTFancyGifDialog;
+import com.bestsoft32.tt_fancy_gif_dialog_lib.TTFancyGifDialogListener;
 import com.example.legutkoapplication.Language;
+import com.example.legutkoapplication.MainActivity;
 import com.example.legutkoapplication.MainHelpers.EmailAutoActivity;
 import com.example.legutkoapplication.R;
 import com.example.legutkoapplication.RefreshingActivity;
@@ -69,6 +72,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
+
 
 
 public class ProductUpdateActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener, itemClickListener {
@@ -574,11 +578,14 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
 
             saveReport();
         }
-        if (switchStandardPlantationTypical.isChecked()) {
+        else {
             standardPlantationField.setText("Typowa");
-
-//            standardPlantationField.setTextColor(Color.parseColor("#000000"));
         }
+//        if (switchStandardPlantationTypical.isChecked()) {
+//            standardPlantationField.setText("Typowa");
+//
+////            standardPlantationField.setTextColor(Color.parseColor("#000000"));
+//        }
 
 
         if (switchOffPresence_Incorrect.isChecked()) {
@@ -719,19 +726,34 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
 
             @Override
             public void onCompleted(String filePath) {
-                Utils.showSnackBar(view, "Successfully Exported");
-                AlertDialog alertDialog = new AlertDialog.Builder(ProductUpdateActivity.this).create();
-                alertDialog.setTitle("Stan bazy danych");
-                alertDialog.setMessage("Wszelkie zmiany w bazie danych zostały zapisane");
+//                Utils.showSnackBar(view, "Successfully Exported");
+//                AlertDialog alertDialog = new AlertDialog.Builder(ProductUpdateActivity.this).create();
+//                alertDialog.setTitle("Stan bazy danych");
+//                alertDialog.setMessage("Wszelkie zmiany w bazie danych zostały zapisane");
+//
+//
+//                alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        Toast.makeText(getApplicationContext(), "You clicked on OK", Toast.LENGTH_SHORT).show();
+//
+//                    }
+//                });
+//
+//                alertDialog.show();
+                new TTFancyGifDialog.Builder(ProductUpdateActivity.this)
+                        .setTitle("Baza danych została zapisana w pamięci urządzenia")
+                        .setPositiveBtnText("Ok")
+                        .setPositiveBtnBackground("#22b573")
+                        .setGifResource(R.drawable.gif1)      //pass your gif, png or jpg
+                        .isCancellable(true)
+                        .OnPositiveClicked(new TTFancyGifDialogListener() {
+                            @Override
+                            public void OnClick() {
+                                Toast.makeText(ProductUpdateActivity.this,"Ok",Toast.LENGTH_SHORT).show();
+                            }
+                        })
 
-
-                alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getApplicationContext(), "You clicked on OK", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-                alertDialog.show();
+                        .build();
 
             }
 
@@ -739,18 +761,33 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
             public void onError(Exception e) {
 
                 Utils.showSnackBar(view, e.getMessage());
-                AlertDialog alertDialog = new AlertDialog.Builder(ProductUpdateActivity.this).create();
-                alertDialog.setTitle("Stan bazy danych");
-                alertDialog.setMessage("Niestety dane nie zostały zapisane" + e.getMessage());
+//                AlertDialog alertDialog = new AlertDialog.Builder(ProductUpdateActivity.this).create();
+//                alertDialog.setTitle("Stan bazy danych");
+//                alertDialog.setMessage("Niestety dane nie zostały zapisane" + e.getMessage());
+//
+//
+//                alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        Toast.makeText(getApplicationContext(), "You clicked on OK", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//
+//                alertDialog.show();
 
+                new TTFancyGifDialog.Builder(ProductUpdateActivity.this)
+                        .setTitle("Błąd baza danych nie została zapisana")
+                        .setPositiveBtnText("Ok")
+                        .setPositiveBtnBackground("#22b573")
+                        .setGifResource(R.drawable.gif2)      //pass your gif, png or jpg
+                        .isCancellable(true)
+                        .OnPositiveClicked(new TTFancyGifDialogListener() {
+                            @Override
+                            public void OnClick() {
+                                Toast.makeText(ProductUpdateActivity.this,"Ok",Toast.LENGTH_SHORT).show();
+                            }
+                        })
 
-                alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getApplicationContext(), "You clicked on OK", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-                alertDialog.show();
+                        .build();
             }
         });
 
