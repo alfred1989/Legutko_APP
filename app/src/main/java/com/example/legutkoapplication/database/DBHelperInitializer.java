@@ -49,6 +49,7 @@ public class DBHelperInitializer extends SQLiteOpenHelper {
     private static final String KEY_SYMBOL = "symbol";
     private static final String KEY_HISTORICAL_DATA = "dane_historyczne";
     private static final String KEY_CONTRACT = "kontrakt";
+    private static final String KEY_RECENTLY_ADDED = "ostatnio_dodany";
 
 
     public DBHelperInitializer(Context context) {
@@ -147,7 +148,10 @@ public class DBHelperInitializer extends SQLiteOpenHelper {
                 String symbol                        = cursor.getString(19);
                 String historical_data                        = cursor.getString(20);
                 String contract = cursor.getString(21);
-                Product product = new Product(id, producer, species, name, variety, color, group, subgroup, estimatedCrop, offPresence, offPercentage, description, standardPlantation, comment, batch, code, plantationId,commentaryInEnglish,descriptionInEnglish, symbol, historical_data, contract);
+                String recently_added = cursor.getString(22);
+                Product product = new Product(id, producer, species, name, variety, color, group, subgroup, estimatedCrop,
+                        offPresence, offPercentage, description, standardPlantation, comment, batch, code, plantationId,
+                        commentaryInEnglish,descriptionInEnglish, symbol, historical_data, contract,recently_added);
                 productList.add(product);
             } while (cursor.moveToNext());
         }
@@ -178,6 +182,7 @@ public class DBHelperInitializer extends SQLiteOpenHelper {
         contentValues.put(KEY_SYMBOL, product.getSymbol());
         contentValues.put(KEY_HISTORICAL_DATA, product.getHistorical_data());
         contentValues.put(KEY_CONTRACT, product.getContract());
+        contentValues.put(KEY_RECENTLY_ADDED, product.getRecently_added());
 
         return contentValues;
     }

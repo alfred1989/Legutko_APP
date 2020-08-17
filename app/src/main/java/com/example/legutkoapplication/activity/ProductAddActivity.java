@@ -15,6 +15,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bestsoft32.tt_fancy_gif_dialog_lib.TTFancyGifDialog;
+import com.bestsoft32.tt_fancy_gif_dialog_lib.TTFancyGifDialogListener;
 import com.example.legutkoapplication.R;
 import com.example.legutkoapplication.RefreshingActivity;
 import com.example.legutkoapplication.database.DBHelperInitializer;
@@ -33,7 +35,7 @@ public class ProductAddActivity extends AppCompatActivity {
     EditText estimatedCropField;
     EditText offPresenceField;
     EditText offPercentageField;
-    EditText descriptionField;
+    TextView descriptionField;
     EditText standardPlantationField;
     TextView commentField;
     EditText batchField;
@@ -45,7 +47,8 @@ public class ProductAddActivity extends AppCompatActivity {
     TextView commentPLField;
     TextView symbolField;
     TextView historical_dataField;
-    TextView contrectField;
+    EditText contrectField;
+    EditText recently_addedField;
     TextView own_seed_batchField;
     Switch switchStandardPlantation;
     Switch switchStandardPlantationTypical;
@@ -88,6 +91,7 @@ public class ProductAddActivity extends AppCompatActivity {
         symbolField = findViewById(R.id.symbol);
         historical_dataField = findViewById(R.id.historical_dataField_activiti);
         contrectField = findViewById(R.id.contract);
+        recently_addedField = findViewById(R.id.recently_added);
         own_seed_batchField = findViewById(R.id.own_seed_batch);
         //----------------------------Switch Standard Plantanion--------------------------------------------------
         switchStandardPlantation = findViewById(R.id.switch_standard_plantation);
@@ -130,7 +134,7 @@ public class ProductAddActivity extends AppCompatActivity {
         String powierzchnia = plantation_areaPLField.getText().toString().trim();
         String own_seed_batch = own_seed_batchField.getText().toString().trim();
         String contract = contrectField.getText().toString().trim();
-
+        String recently_added = recently_addedField.getText().toString().trim();
         String test = standardPlantation;
         if (test == null) {
             System.out.println("Hello word");
@@ -149,18 +153,47 @@ public class ProductAddActivity extends AppCompatActivity {
         String commentaryInPL = own_seed_batch;
         DBHelperInitializer db = new DBHelperInitializer(this);
         Product product = new Product(productId, producer, species, name, variety, color, group, subgroup, estimatedCrop, offPresence,
-                offPercentage, description, standardPlantation, comment, batch, code, plantationId, commentaryInPL, descriptionInEnglish, symbol,historical_data,contract);
+                offPercentage, description, standardPlantation, comment, batch, code, plantationId, commentaryInPL,
+                descriptionInEnglish, symbol,historical_data,contract, recently_added);
         long result = db.addProduct(product);
         if (result != -1) {
             Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
+            new TTFancyGifDialog.Builder(ProductAddActivity.this)
+                    .setTitle("Baza danych została zapisana w pamięci urządzenia")
+                    .setPositiveBtnText("Ok")
+                    .setPositiveBtnBackground("#22b573")
+                    .setGifResource(R.drawable.gif1)      //pass your gif, png or jpg
+                    .isCancellable(true)
+                    .OnPositiveClicked(new TTFancyGifDialogListener() {
+                        @Override
+                        public void OnClick() {
+                            Toast.makeText(ProductAddActivity.this,"Ok",Toast.LENGTH_SHORT).show();
+                        }
+                    })
+
+                    .build();
         } else {
             Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show();
+            new TTFancyGifDialog.Builder(ProductAddActivity.this)
+                    .setTitle("Błąd baza danych nie została zapisana")
+
+                    .setPositiveBtnBackground("#22b573")
+                    .setGifResource(R.drawable.gif2)      //pass your gif, png or jpg
+                    .isCancellable(true)
+                    .OnPositiveClicked(new TTFancyGifDialogListener() {
+                        @Override
+                        public void OnClick() {
+
+                        }
+                    })
+
+                    .build();
         }
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    Thread.sleep(2 * 600);
+                    Thread.sleep(3 * 600);
 
                     startActivity(new Intent(ProductAddActivity.this, RefreshingActivity.class));
                     finish();

@@ -551,6 +551,54 @@
             <Space android:layout_height="12dp"></Space>
 
             -----------------------------------------------------------------------------------------
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#DAE8FC"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#3da549">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Ostatnio dodany "
+                        android:textColor="	#000000"
+                        android:textSize="16dp"></TextView>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Ostatnio dodany"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="	#000000"></TextView>
+
+
+                </TableRow>
+
+
+            </TableLayout>
+
+            <Space android:layout_height="12dp"></Space>
+            -----------------------------------------------------------------------------------------
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -582,7 +630,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
-                        android:id="@+id/description"
+                        android:id="@+id/recently_added"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"

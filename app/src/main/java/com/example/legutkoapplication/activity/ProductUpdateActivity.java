@@ -79,7 +79,7 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
     EditText estimatedCropField;
     EditText offPresenceField;
     EditText offPercentageField;
-    EditText descriptionField;
+    TextView descriptionField;
     EditText standardPlantationField;
     TextView commentField;
     EditText batchField;
@@ -91,7 +91,8 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
     TextView commentPLField;
     TextView symbolField;
     TextView historical_dataField;
-    TextView contrectField;
+    EditText contrectField;
+    EditText recently_addedField;
     TextView own_seed_batchField;
     Switch switchStandardPlantation;
     Switch switchStandardPlantationTypical;
@@ -145,6 +146,7 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         symbolField = findViewById(R.id.symbol);
         historical_dataField = findViewById(R.id.historical_dataField_activiti);
         contrectField = findViewById(R.id.contract);
+        recently_addedField = findViewById(R.id.recently_added);
         own_seed_batchField = findViewById(R.id.own_seed_batch);
         //----------------------------Switch Standard Plantanion--------------------------------------------------
         switchStandardPlantation = findViewById(R.id.switch_standard_plantation);
@@ -177,6 +179,7 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         commentPLField.setText(product.getDescriptionInPL());
         symbolField.setText(product.getSymbol());
         historical_dataField.setText(product.getHistorical_data());
+
         own_seed_batchField.setText(product.getDescriptionInPL());
         String nameSpilt = product.getName();
         String [] nameSpiltTab = nameSpilt.split("/");
@@ -250,6 +253,7 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         String powierzchnia = plantation_areaPLField.getText().toString().trim();
         String own_seed_batch = own_seed_batchField.getText().toString().trim();
         String contract = contrectField.getText().toString().trim();
+        String recently_added = recently_addedField.getText().toString().trim();
         System.out.println(own_seed_batch + "   own_seed_batch ");
         String test = standardPlantation;
         if (test == null) {
@@ -265,11 +269,11 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         System.out.println(commentaryInPL+ "   commentaryInPL");
         descriptionInEnglish = own_seed_batch;
         System.out.println( );
-        historical_data = historical_data + "; "+timeStamp+" "+description;
-        description = null;
+        historical_data = historical_data + "; "+timeStamp+" "+recently_added;
+        description = timeStamp+" "+recently_added;
         return new Product(productId, producer, species, name, variety, color, group, subgroup, estimatedCrop, offPresence,
                 offPercentage, description, standardPlantation, comment, batch, code, plantationId, commentaryInPL, descriptionInEnglish,
-                symbol, historical_data, contract);
+                symbol, historical_data, contract, recently_added);
     }
 
     private void updateProduct() {

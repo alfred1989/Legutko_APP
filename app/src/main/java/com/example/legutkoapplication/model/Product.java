@@ -25,13 +25,15 @@ public class Product implements Serializable {
     String symbol;
     String historical_data;
     String contract;
+    String recently_added;
 
     public Product() {
     }
 
     public Product(int id, String producer, String species, String name, String variety, String color, String group, String subgroup,
                    String estimatedCrop, String offPresence, String offPercentage, String description, String standardPlantation,
-                   String comment, String batch, String code, String plantationId, String plantation_area, String descriptionInPL, String symbol, String historical_data,  String contract) {
+                   String comment, String batch, String code, String plantationId, String plantation_area, String descriptionInPL,
+                   String symbol, String historical_data, String contract, String recently_added) {
         this.id = id;
         this.producer = producer;
         this.species = species;
@@ -54,6 +56,15 @@ public class Product implements Serializable {
         this.symbol = symbol;
         this.historical_data = historical_data;
         this.contract = contract;
+        this.recently_added = recently_added;
+    }
+
+    public String getRecently_added() {
+        return recently_added;
+    }
+
+    public void setRecently_added(String recently_added) {
+        this.recently_added = recently_added;
     }
 
     public String getContract() {
