@@ -85,7 +85,7 @@
 
 
         <TextView
-            android:id="@+id/commentaryInPL"
+            android:id="@+id/plantation_area"
             android:text="Growing area" />
     </TableRow>
 

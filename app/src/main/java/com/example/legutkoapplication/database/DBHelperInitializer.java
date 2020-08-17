@@ -48,6 +48,7 @@ public class DBHelperInitializer extends SQLiteOpenHelper {
     private static final String KEY_DESCRIPTION_IN_ENGLISH = "partia_nasion_wlasnych";
     private static final String KEY_SYMBOL = "symbol";
     private static final String KEY_HISTORICAL_DATA = "dane_historyczne";
+    private static final String KEY_CONTRACT = "kontrakt";
 
 
     public DBHelperInitializer(Context context) {
@@ -145,7 +146,8 @@ public class DBHelperInitializer extends SQLiteOpenHelper {
                 String  descriptionInEnglish                         = cursor.getString(18);
                 String symbol                        = cursor.getString(19);
                 String historical_data                        = cursor.getString(20);
-                Product product = new Product(id, producer, species, name, variety, color, group, subgroup, estimatedCrop, offPresence, offPercentage, description, standardPlantation, comment, batch, code, plantationId,commentaryInEnglish,descriptionInEnglish, symbol, historical_data);
+                String contract = cursor.getString(21);
+                Product product = new Product(id, producer, species, name, variety, color, group, subgroup, estimatedCrop, offPresence, offPercentage, description, standardPlantation, comment, batch, code, plantationId,commentaryInEnglish,descriptionInEnglish, symbol, historical_data, contract);
                 productList.add(product);
             } while (cursor.moveToNext());
         }
@@ -171,10 +173,11 @@ public class DBHelperInitializer extends SQLiteOpenHelper {
         contentValues.put(KEY_BATCH, product.getBatch());
         contentValues.put(KEY_CODE, product.getCode());
         contentValues.put(KEY_PLANTATION_ID, product.getPlantationId());
-        contentValues.put(KEY_PLANTATION_AREA, product.getCommentaryInPL());
+        contentValues.put(KEY_PLANTATION_AREA, product.getPlantation_area());
         contentValues.put(KEY_DESCRIPTION_IN_ENGLISH, product.getDescriptionInPL());
         contentValues.put(KEY_SYMBOL, product.getSymbol());
         contentValues.put(KEY_HISTORICAL_DATA, product.getHistorical_data());
+        contentValues.put(KEY_CONTRACT, product.getContract());
 
         return contentValues;
     }

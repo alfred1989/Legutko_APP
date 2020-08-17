@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.legutkoapplication.MenuActivity;
+
 import com.example.legutkoapplication.R;
 import com.example.legutkoapplication.RefreshingActivity;
 import com.example.legutkoapplication.database.DBHelperInitializer;
@@ -39,15 +39,18 @@ public class ProductAddActivity extends AppCompatActivity {
     EditText batchField;
     EditText codeField;
     TextView plantationIdField;
-    TextView commentaryInPLField;
+    TextView plantation_areaPLField;
     TextView descriptionInEnglishField;
+    TextView dField;
     TextView commentPLField;
     TextView symbolField;
     TextView historical_dataField;
+    TextView contrectField;
     TextView own_seed_batchField;
-    EditText switchStandardPlantation;
-    EditText switchStandardPlantationTypical;
-    EditText switchOffPresence_Incorrect;
+    Switch switchStandardPlantation;
+    Switch switchStandardPlantationTypical;
+    Switch switchOffPresence_Incorrect;
+    Switch switchOffPresence_Typical;
     private ImageView mImageView;
     private Button mButtonCapture;
     String mCurrentPhotoPath;
@@ -62,8 +65,6 @@ public class ProductAddActivity extends AppCompatActivity {
         dbHelper = new DBHelperInitializer(this);
 
         //--------------------------------------camera-----------------------------------
-        mImageView = findViewById(R.id.imageView);
-        mButtonCapture = findViewById(R.id.button_photo);
         producerField = findViewById(R.id.producer);
         speciesField = findViewById(R.id.species);
         nameField = findViewById(R.id.name);
@@ -80,14 +81,18 @@ public class ProductAddActivity extends AppCompatActivity {
         batchField = findViewById(R.id.batch);
         codeField = findViewById(R.id.code);
         plantationIdField = findViewById(R.id.plantation_id);
-        commentaryInPLField = findViewById(R.id.commentaryInPL);
+        plantation_areaPLField = findViewById(R.id.plantation_area);
         descriptionInEnglishField = findViewById(R.id.descriptionInEnglish);
+//        dField = findViewById(R.id.d);
         commentPLField = findViewById(R.id.commentPL);
         symbolField = findViewById(R.id.symbol);
-        historical_dataField = findViewById(R.id.historical_data);
+        historical_dataField = findViewById(R.id.historical_dataField_activiti);
+        contrectField = findViewById(R.id.contract);
         own_seed_batchField = findViewById(R.id.own_seed_batch);
+        //----------------------------Switch Standard Plantanion--------------------------------------------------
         switchStandardPlantation = findViewById(R.id.switch_standard_plantation);
         switchStandardPlantationTypical = findViewById(R.id.switch_standard_plantation_typical);
+        //----------------------------------Switch Off Presence--------------------------------------------
         switchOffPresence_Incorrect = findViewById(R.id.switch_off_presence);
         ActionBar actionBarr = getSupportActionBar();
         actionBarr.setTitle("Back");
@@ -122,9 +127,9 @@ public class ProductAddActivity extends AppCompatActivity {
         String plantationId = plantationIdField.getText().toString().trim();
         String symbol = symbolField.getText().toString().trim();
         String historical_data = historical_dataField.getText().toString().trim();
-        String powierzchnia = commentaryInPLField.getText().toString().trim();
+        String powierzchnia = plantation_areaPLField.getText().toString().trim();
         String own_seed_batch = own_seed_batchField.getText().toString().trim();
-        System.out.println(own_seed_batch + "   own_seed_batch ");
+        String contract = contrectField.getText().toString().trim();
 
         String test = standardPlantation;
         if (test == null) {
@@ -144,7 +149,7 @@ public class ProductAddActivity extends AppCompatActivity {
         String commentaryInPL = own_seed_batch;
         DBHelperInitializer db = new DBHelperInitializer(this);
         Product product = new Product(productId, producer, species, name, variety, color, group, subgroup, estimatedCrop, offPresence,
-                offPercentage, description, standardPlantation, comment, batch, code, plantationId, commentaryInPL, descriptionInEnglish, symbol,historical_data);
+                offPercentage, description, standardPlantation, comment, batch, code, plantationId, commentaryInPL, descriptionInEnglish, symbol,historical_data,contract);
         long result = db.addProduct(product);
         if (result != -1) {
             Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();

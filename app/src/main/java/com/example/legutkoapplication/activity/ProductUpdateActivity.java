@@ -1,12 +1,8 @@
 package com.example.legutkoapplication.activity;
 
 import android.Manifest;
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
@@ -20,13 +16,9 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.StrictMode;
 import android.provider.MediaStore;
-import android.provider.SyncStateContract;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -37,38 +29,28 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.core.app.NavUtils;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.ImageDisplay;
 import com.ajts.androidmads.library.SQLiteToExcel;
 import com.bestsoft32.tt_fancy_gif_dialog_lib.TTFancyGifDialog;
 import com.bestsoft32.tt_fancy_gif_dialog_lib.TTFancyGifDialogListener;
-import com.example.legutkoapplication.Language;
-import com.example.legutkoapplication.MainActivity;
-import com.example.legutkoapplication.MainHelpers.EmailAutoActivity;
 import com.example.legutkoapplication.R;
 import com.example.legutkoapplication.RefreshingActivity;
-import com.example.legutkoapplication.TranslateAPI;
 import com.example.legutkoapplication.Utils;
 import com.example.legutkoapplication.database.DBHelperInitializer;
 import com.example.legutkoapplication.model.Product;
-import com.utils.MarginDecoration;
 import com.utils.PicHolder;
 import com.utils.imageFolder;
 import com.utils.itemClickListener;
 import com.utils.pictureFacer;
-import com.utils.pictureFolderAdapter;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.net.URI;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
@@ -103,12 +85,13 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
     EditText batchField;
     EditText codeField;
     TextView plantationIdField;
-    TextView commentaryInPLField;
+    TextView plantation_areaPLField;
     TextView descriptionInEnglishField;
     TextView dField;
     TextView commentPLField;
     TextView symbolField;
     TextView historical_dataField;
+    TextView contrectField;
     TextView own_seed_batchField;
     Switch switchStandardPlantation;
     Switch switchStandardPlantationTypical;
@@ -135,7 +118,6 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
                     MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
         dbHelper = new DBHelperInitializer(this);
         mImageView = findViewById(R.id.imageView);
-        mButtonCapture = findViewById(R.id.button_photo);
         br = new MyBroadCastReviecer();
         IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
         filter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
@@ -156,12 +138,13 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         batchField = findViewById(R.id.batch);
         codeField = findViewById(R.id.code);
         plantationIdField = findViewById(R.id.plantation_id);
-        commentaryInPLField = findViewById(R.id.commentaryInPL);
+        plantation_areaPLField = findViewById(R.id.plantation_area);
         descriptionInEnglishField = findViewById(R.id.descriptionInEnglish);
 //        dField = findViewById(R.id.d);
         commentPLField = findViewById(R.id.commentPL);
         symbolField = findViewById(R.id.symbol);
         historical_dataField = findViewById(R.id.historical_dataField_activiti);
+        contrectField = findViewById(R.id.contract);
         own_seed_batchField = findViewById(R.id.own_seed_batch);
         //----------------------------Switch Standard Plantanion--------------------------------------------------
         switchStandardPlantation = findViewById(R.id.switch_standard_plantation);
@@ -189,7 +172,7 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         batchField.setText(product.getBatch());
         codeField.setText(product.getCode());
         plantationIdField.setText(product.getPlantationId());
-        commentaryInPLField.setText(product.getCommentaryInPL());
+        plantation_areaPLField.setText(product.getPlantation_area());
         descriptionInEnglishField.setText(product.getDescriptionInPL());
         commentPLField.setText(product.getDescriptionInPL());
         symbolField.setText(product.getSymbol());
@@ -264,8 +247,9 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         String plantationId = plantationIdField.getText().toString().trim();
         String symbol = symbolField.getText().toString().trim();
         String historical_data = historical_dataField.getText().toString().trim();
-        String powierzchnia = commentaryInPLField.getText().toString().trim();
+        String powierzchnia = plantation_areaPLField.getText().toString().trim();
         String own_seed_batch = own_seed_batchField.getText().toString().trim();
+        String contract = contrectField.getText().toString().trim();
         System.out.println(own_seed_batch + "   own_seed_batch ");
         String test = standardPlantation;
         if (test == null) {
@@ -284,7 +268,8 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         historical_data = historical_data + "; "+timeStamp+" "+description;
         description = null;
         return new Product(productId, producer, species, name, variety, color, group, subgroup, estimatedCrop, offPresence,
-                offPercentage, description, standardPlantation, comment, batch, code, plantationId, commentaryInPL, descriptionInEnglish, symbol, historical_data);
+                offPercentage, description, standardPlantation, comment, batch, code, plantationId, commentaryInPL, descriptionInEnglish,
+                symbol, historical_data, contract);
     }
 
     private void updateProduct() {
