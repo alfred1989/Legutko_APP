@@ -36,8 +36,8 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         TextView code = view.findViewById(R.id.code);
         TextView species = view.findViewById(R.id.species);
         TextView standardPlantation = view.findViewById(R.id.standard_plantation);
-        TextView commentaryInPL = view.findViewById(R.id.plantation_area);
         TextView batch = view.findViewById(R.id.batch);
+        TextView plantation_area = view.findViewById(R.id.plantation_area);
         TextView comment = view.findViewById(R.id.comment);
 
         name.setText(product.getName());
@@ -45,7 +45,6 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         code.setText(String.valueOf(product.getCode()));
         species.setText(product.getSpecies());
         standardPlantation.setText(product.getStandardPlantation());
-        commentaryInPL.setText(product.getPlantation_area());
         batch.setText(product.getBatch());
         comment.setText(product.getComment());
 

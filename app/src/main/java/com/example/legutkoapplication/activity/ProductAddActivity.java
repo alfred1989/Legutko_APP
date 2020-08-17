@@ -37,19 +37,16 @@ public class ProductAddActivity extends AppCompatActivity {
     EditText offPercentageField;
     TextView descriptionField;
     EditText standardPlantationField;
-    TextView commentField;
+    EditText commentField;
     EditText batchField;
     EditText codeField;
-    TextView plantationIdField;
-    TextView plantation_areaPLField;
-    TextView descriptionInEnglishField;
-    TextView dField;
-    TextView commentPLField;
-    TextView symbolField;
-    TextView historical_dataField;
-    EditText contrectField;
+    EditText plantationIdField;
+    EditText descriptionInPLField;
+    EditText symbolField;
+    EditText historical_dataField;
+    EditText contractField;
     EditText recently_addedField;
-    TextView own_seed_batchField;
+    EditText plantation_areaField;
     Switch switchStandardPlantation;
     Switch switchStandardPlantationTypical;
     Switch switchOffPresence_Incorrect;
@@ -84,15 +81,12 @@ public class ProductAddActivity extends AppCompatActivity {
         batchField = findViewById(R.id.batch);
         codeField = findViewById(R.id.code);
         plantationIdField = findViewById(R.id.plantation_id);
-        plantation_areaPLField = findViewById(R.id.plantation_area);
-        descriptionInEnglishField = findViewById(R.id.descriptionInEnglish);
-//        dField = findViewById(R.id.d);
-        commentPLField = findViewById(R.id.commentPL);
+        descriptionInPLField = findViewById(R.id.descriptionInPL);
         symbolField = findViewById(R.id.symbol);
         historical_dataField = findViewById(R.id.historical_dataField_activiti);
-        contrectField = findViewById(R.id.contract);
+        contractField = findViewById(R.id.contract);
         recently_addedField = findViewById(R.id.recently_added);
-        own_seed_batchField = findViewById(R.id.own_seed_batch);
+        plantation_areaField = findViewById(R.id.plantation_area);
         //----------------------------Switch Standard Plantanion--------------------------------------------------
         switchStandardPlantation = findViewById(R.id.switch_standard_plantation);
         switchStandardPlantationTypical = findViewById(R.id.switch_standard_plantation_typical);
@@ -129,12 +123,12 @@ public class ProductAddActivity extends AppCompatActivity {
         String batch = batchField.getText().toString().trim();
         String code = codeField.getText().toString().trim();
         String plantationId = plantationIdField.getText().toString().trim();
+        String descriptionInPL = descriptionInPLField.getText().toString().trim();
         String symbol = symbolField.getText().toString().trim();
         String historical_data = historical_dataField.getText().toString().trim();
-        String powierzchnia = plantation_areaPLField.getText().toString().trim();
-        String own_seed_batch = own_seed_batchField.getText().toString().trim();
-        String contract = contrectField.getText().toString().trim();
+        String contract = contractField.getText().toString().trim();
         String recently_added = recently_addedField.getText().toString().trim();
+        String plantation_area = plantation_areaField.getText().toString().trim();
         String test = standardPlantation;
         if (test == null) {
             System.out.println("Hello word");
@@ -150,11 +144,11 @@ public class ProductAddActivity extends AppCompatActivity {
         String descriptionInEnglish = myObj + " " + descriptionField.getText().toString() + "|";
         description = descriptionInEnglish;
         descriptionInEnglish = descriptionField.getText().toString();
-        String commentaryInPL = own_seed_batch;
+//        String commentaryInPL = own_seed_batch;
         DBHelperInitializer db = new DBHelperInitializer(this);
-        Product product = new Product(productId, producer, species, name, variety, color, group, subgroup, estimatedCrop, offPresence,
-                offPercentage, description, standardPlantation, comment, batch, code, plantationId, commentaryInPL,
-                descriptionInEnglish, symbol,historical_data,contract, recently_added);
+        Product product = new Product(productId, producer, species, name, variety, color, group, subgroup, estimatedCrop,
+                offPresence, offPercentage, description, standardPlantation, comment, batch, code, plantationId,
+                descriptionInPL, symbol, historical_data, contract, recently_added, plantation_area);
         long result = db.addProduct(product);
         if (result != -1) {
             Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();

@@ -73,6 +73,26 @@
             android:text="Species" />
     </TableRow>
 
+
+
+
+    <TableRow
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="5dp">
+
+    <TextView
+        android:layout_marginRight="15dp"
+        android:text="Type of crop Typical / Unusual" />
+
+    <TextView
+        android:id="@+id/standard_plantation"
+        android:text="Standard plantation"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        />
+</TableRow>
+
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -81,28 +101,11 @@
 
         <TextView
             android:layout_marginRight="15dp"
-            android:text="Growing area" />
-
+            android:text="Powierzchnia plantacji" />
 
         <TextView
             android:id="@+id/plantation_area"
-            android:text="Growing area" />
-    </TableRow>
-
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp">
-
-        <TextView
-            android:layout_marginRight="15dp"
-            android:text="Type of crop Typical / Unusual" />
-
-        <TextView
-            android:id="@+id/standard_plantation"
-            android:text="Standard plantation"
+            android:text="powierzchnia plantacji"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
             />
     </TableRow>

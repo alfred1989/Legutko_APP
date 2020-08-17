@@ -44,12 +44,12 @@ public class DBHelperInitializer extends SQLiteOpenHelper {
     private static final String KEY_BATCH = "partia";
     private static final String KEY_CODE = "nr_reprodukcji";
     private static final String KEY_PLANTATION_ID = "id_plantacji";
-    private static final String KEY_PLANTATION_AREA = "powierzchnia_plantacji";   //szybka zmiana na powierzchnie plantacji
     private static final String KEY_DESCRIPTION_IN_ENGLISH = "partia_nasion_wlasnych";
     private static final String KEY_SYMBOL = "symbol";
     private static final String KEY_HISTORICAL_DATA = "dane_historyczne";
     private static final String KEY_CONTRACT = "kontrakt";
     private static final String KEY_RECENTLY_ADDED = "ostatnio_dodany";
+    private static final String KEY_PLANTATION_AREA = "powierzchnia_plantacji";   //szybka zmiana na powierzchnie plantacji
 
 
     public DBHelperInitializer(Context context) {
@@ -127,31 +127,32 @@ public class DBHelperInitializer extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 int id = cursor.getInt(0);
-                String producer                      = cursor.getString(1);
-                String species                       = cursor.getString(2);
-                String name                      = cursor.getString(3);
-                String variety                       = cursor.getString(4);
-                String color                         = cursor.getString(5);
-                String group                         = cursor.getString(6);
-                String subgroup                      = cursor.getString(7);
-                String estimatedCrop                         = cursor.getString(8);
-                String offPresence                       = cursor.getString(9);
-                String offPercentage                         = cursor.getString(10);
-                String description                       = cursor.getString(11);
-                String standardPlantation                        = cursor.getString(12);
-                String comment                       = cursor.getString(13);
-                String batch                         = cursor.getString(14);
-                String code                      = cursor.getString(15);
-                String plantationId                      = cursor.getString(16);
-                String  commentaryInEnglish                      = cursor.getString(17);
-                String  descriptionInEnglish                         = cursor.getString(18);
-                String symbol                        = cursor.getString(19);
-                String historical_data                        = cursor.getString(20);
-                String contract = cursor.getString(21);
-                String recently_added = cursor.getString(22);
+                String producer = cursor.getString(1);
+                String species = cursor.getString(2);
+                String name = cursor.getString(3);
+                String variety = cursor.getString(4);
+                String color = cursor.getString(5);
+                String group = cursor.getString(6);
+                String subgroup = cursor.getString(7);
+                String estimatedCrop = cursor.getString(8);
+                String offPresence = cursor.getString(9);
+                String offPercentage = cursor.getString(10);
+                String description = cursor.getString(11);
+                String standardPlantation = cursor.getString(12);
+                String comment = cursor.getString(13);
+                String batch = cursor.getString(14);
+                String code = cursor.getString(15);
+                String plantationId = cursor.getString(16);
+                String descriptionInPL = cursor.getString(17);
+                String symbol = cursor.getString(18);
+                String historical_data = cursor.getString(19);
+                String contract = cursor.getString(20);
+                String recently_added = cursor.getString(21);
+                String plantation_area = cursor.getString(22);
+
                 Product product = new Product(id, producer, species, name, variety, color, group, subgroup, estimatedCrop,
                         offPresence, offPercentage, description, standardPlantation, comment, batch, code, plantationId,
-                        commentaryInEnglish,descriptionInEnglish, symbol, historical_data, contract,recently_added);
+                        descriptionInPL, symbol, historical_data, contract, recently_added, plantation_area);
                 productList.add(product);
             } while (cursor.moveToNext());
         }
@@ -177,12 +178,12 @@ public class DBHelperInitializer extends SQLiteOpenHelper {
         contentValues.put(KEY_BATCH, product.getBatch());
         contentValues.put(KEY_CODE, product.getCode());
         contentValues.put(KEY_PLANTATION_ID, product.getPlantationId());
-        contentValues.put(KEY_PLANTATION_AREA, product.getPlantation_area());
         contentValues.put(KEY_DESCRIPTION_IN_ENGLISH, product.getDescriptionInPL());
         contentValues.put(KEY_SYMBOL, product.getSymbol());
         contentValues.put(KEY_HISTORICAL_DATA, product.getHistorical_data());
         contentValues.put(KEY_CONTRACT, product.getContract());
         contentValues.put(KEY_RECENTLY_ADDED, product.getRecently_added());
+        contentValues.put(KEY_PLANTATION_AREA, product.getPlantation_area());
 
         return contentValues;
     }

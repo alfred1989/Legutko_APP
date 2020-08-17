@@ -20,20 +20,20 @@ public class Product implements Serializable {
     String batch;
     String code;
     String plantationId;
-    String plantation_area;
     String descriptionInPL;
     String symbol;
     String historical_data;
     String contract;
     String recently_added;
+    String plantation_area;
 
     public Product() {
     }
 
-    public Product(int id, String producer, String species, String name, String variety, String color, String group, String subgroup,
-                   String estimatedCrop, String offPresence, String offPercentage, String description, String standardPlantation,
-                   String comment, String batch, String code, String plantationId, String plantation_area, String descriptionInPL,
-                   String symbol, String historical_data, String contract, String recently_added) {
+    public Product(int id, String producer, String species, String name, String variety, String color, String group,
+                   String subgroup, String estimatedCrop, String offPresence, String offPercentage, String description,
+                   String standardPlantation, String comment, String batch, String code, String plantationId, String descriptionInPL,
+                   String symbol, String historical_data, String contract, String recently_added, String plantation_area) {
         this.id = id;
         this.producer = producer;
         this.species = species;
@@ -51,36 +51,20 @@ public class Product implements Serializable {
         this.batch = batch;
         this.code = code;
         this.plantationId = plantationId;
-        this.plantation_area = plantation_area;
         this.descriptionInPL = descriptionInPL;
         this.symbol = symbol;
         this.historical_data = historical_data;
         this.contract = contract;
         this.recently_added = recently_added;
+        this.plantation_area = plantation_area;
     }
 
-    public String getRecently_added() {
-        return recently_added;
+    public String getPlantation_area() {
+        return plantation_area;
     }
 
-    public void setRecently_added(String recently_added) {
-        this.recently_added = recently_added;
-    }
-
-    public String getContract() {
-        return contract;
-    }
-
-    public void setContract(String contract) {
-        this.contract = contract;
-    }
-
-    public String getHistorical_data() {
-        return historical_data;
-    }
-
-    public void setHistorical_data(String historical_data) {
-        this.historical_data = historical_data;
+    public void setPlantation_area(String plantation_area) {
+        this.plantation_area = plantation_area;
     }
 
     public int getId() {
@@ -219,14 +203,6 @@ public class Product implements Serializable {
         this.plantationId = plantationId;
     }
 
-    public String getPlantation_area() {
-        return plantation_area;
-    }
-
-    public void setPlantation_area(String plantation_area) {
-        this.plantation_area = plantation_area;
-    }
-
     public String getDescriptionInPL() {
         return descriptionInPL;
     }
@@ -241,6 +217,30 @@ public class Product implements Serializable {
 
     public void setSymbol(String symbol) {
         this.symbol = symbol;
+    }
+
+    public String getHistorical_data() {
+        return historical_data;
+    }
+
+    public void setHistorical_data(String historical_data) {
+        this.historical_data = historical_data;
+    }
+
+    public String getContract() {
+        return contract;
+    }
+
+    public void setContract(String contract) {
+        this.contract = contract;
+    }
+
+    public String getRecently_added() {
+        return recently_added;
+    }
+
+    public void setRecently_added(String recently_added) {
+        this.recently_added = recently_added;
     }
 }
 

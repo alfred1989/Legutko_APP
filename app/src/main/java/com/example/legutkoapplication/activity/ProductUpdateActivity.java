@@ -1,6 +1,7 @@
 package com.example.legutkoapplication.activity;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -56,7 +57,6 @@ import java.util.Date;
 import java.util.Locale;
 
 
-
 public class ProductUpdateActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener, itemClickListener {
     private static final int WRITE_EXTERNAL_STORAGE_CODE = 2;
     static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -81,19 +81,16 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
     EditText offPercentageField;
     TextView descriptionField;
     EditText standardPlantationField;
-    TextView commentField;
+    EditText commentField;
     EditText batchField;
     EditText codeField;
-    TextView plantationIdField;
-    TextView plantation_areaPLField;
-    TextView descriptionInEnglishField;
-    TextView dField;
-    TextView commentPLField;
-    TextView symbolField;
-    TextView historical_dataField;
-    EditText contrectField;
+    EditText plantationIdField;
+    EditText descriptionInPLField;
+    EditText symbolField;
+    EditText historical_dataField;
+    EditText contractField;
     EditText recently_addedField;
-    TextView own_seed_batchField;
+    EditText plantation_areaField;
     Switch switchStandardPlantation;
     Switch switchStandardPlantationTypical;
     Switch switchOffPresence_Incorrect;
@@ -105,6 +102,8 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
     private BroadcastReceiver br;
     public int numberOfClicks = 0;
     String timeStamp = new SimpleDateFormat("yyyy_MM_dd", Locale.getDefault()).format(System.currentTimeMillis());
+
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -139,15 +138,13 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         batchField = findViewById(R.id.batch);
         codeField = findViewById(R.id.code);
         plantationIdField = findViewById(R.id.plantation_id);
-        plantation_areaPLField = findViewById(R.id.plantation_area);
-        descriptionInEnglishField = findViewById(R.id.descriptionInEnglish);
-//        dField = findViewById(R.id.d);
-        commentPLField = findViewById(R.id.commentPL);
+        descriptionInPLField = findViewById(R.id.descriptionInPL);
         symbolField = findViewById(R.id.symbol);
         historical_dataField = findViewById(R.id.historical_dataField_activiti);
-        contrectField = findViewById(R.id.contract);
+        contractField = findViewById(R.id.contract);
         recently_addedField = findViewById(R.id.recently_added);
-        own_seed_batchField = findViewById(R.id.own_seed_batch);
+        plantation_areaField = findViewById(R.id.plantation_area);
+
         //----------------------------Switch Standard Plantanion--------------------------------------------------
         switchStandardPlantation = findViewById(R.id.switch_standard_plantation);
         switchStandardPlantation.setOnCheckedChangeListener(this);
@@ -174,15 +171,13 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         batchField.setText(product.getBatch());
         codeField.setText(product.getCode());
         plantationIdField.setText(product.getPlantationId());
-        plantation_areaPLField.setText(product.getPlantation_area());
-        descriptionInEnglishField.setText(product.getDescriptionInPL());
-        commentPLField.setText(product.getDescriptionInPL());
+        descriptionInPLField.setText(product.getDescriptionInPL());
         symbolField.setText(product.getSymbol());
         historical_dataField.setText(product.getHistorical_data());
-
-        own_seed_batchField.setText(product.getDescriptionInPL());
+        contractField.setText(product.getContract());
+        recently_addedField.setText(product.getRecently_added());
         String nameSpilt = product.getName();
-        String [] nameSpiltTab = nameSpilt.split("/");
+        String[] nameSpiltTab = nameSpilt.split("/");
         nameField.setText(nameSpiltTab[0]);
         System.out.println(nameSpiltTab[0] + "spilt");
 
@@ -248,13 +243,13 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         String batch = batchField.getText().toString().trim();
         String code = codeField.getText().toString().trim();
         String plantationId = plantationIdField.getText().toString().trim();
+        String descriptionInPL = descriptionInPLField.getText().toString().trim();
         String symbol = symbolField.getText().toString().trim();
         String historical_data = historical_dataField.getText().toString().trim();
-        String powierzchnia = plantation_areaPLField.getText().toString().trim();
-        String own_seed_batch = own_seed_batchField.getText().toString().trim();
-        String contract = contrectField.getText().toString().trim();
+        String contract = contractField.getText().toString().trim();
         String recently_added = recently_addedField.getText().toString().trim();
-        System.out.println(own_seed_batch + "   own_seed_batch ");
+        String plantation_area = plantation_areaField.getText().toString().trim();
+//        System.out.println(own_seed_batch + "   own_seed_batch ");
         String test = standardPlantation;
         if (test == null) {
             System.out.println("Hello word");
@@ -263,17 +258,17 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
             descriptionField.setBackgroundColor(Color.RED);
             descriptionField.setText("-");
         }
-        String descriptionInEnglish = descriptionField.getText().toString() +"|";
+        String descriptionInEnglish = descriptionField.getText().toString() + "|";
         description = descriptionInEnglish;
-        String  commentaryInPL = own_seed_batch;
-        System.out.println(commentaryInPL+ "   commentaryInPL");
-        descriptionInEnglish = own_seed_batch;
-        System.out.println( );
-        historical_data = historical_data + "; "+timeStamp+" "+recently_added;
-        description = timeStamp+" "+recently_added;
-        return new Product(productId, producer, species, name, variety, color, group, subgroup, estimatedCrop, offPresence,
-                offPercentage, description, standardPlantation, comment, batch, code, plantationId, commentaryInPL, descriptionInEnglish,
-                symbol, historical_data, contract, recently_added);
+//        String  commentaryInPL = own_seed_batch;  //własna partia nasion
+//        System.out.println(commentaryInPL+ "   commentaryInPL");
+//        descriptionInEnglish = own_seed_batch;
+        System.out.println();
+        historical_data = historical_data + "; " + timeStamp + " " + recently_added;
+        description = timeStamp + " " + recently_added;
+        return new Product(productId, producer, species, name, variety, color, group, subgroup, estimatedCrop,
+                offPresence, offPercentage, description, standardPlantation, comment, batch, code, plantationId,
+                descriptionInPL, symbol, historical_data, contract, recently_added, plantation_area);
     }
 
     private void updateProduct() {
@@ -322,8 +317,7 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         if (switchStandardPlantation.isChecked()) {
             standardPlantationField.setText("Nietypowa");
             saveReport();
-        }
-        else {
+        } else {
             standardPlantationField.setText("Typowa");
         }
         if (switchOffPresence_Incorrect.isChecked()) {
@@ -336,6 +330,7 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
             findViewById(R.id.off_presence).setEnabled(false);
         }
     }
+
     public void ok(View view) {
         startActivity(new Intent(ProductUpdateActivity.this, ProductUpdateActivity.class));
         finish();
@@ -347,26 +342,26 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         String fileMy_Files = Environment.getExternalStorageDirectory().getPath();
         File file = new File(fileDataTab);
         File storageDir = Environment.getExternalStoragePublicDirectory(fileDataTab);
-    File mFolder = new File(fileDataTab);
+        File mFolder = new File(fileDataTab);
         if (!mFolder.exists()) {
             mFolder.mkdir();
         }
-        File Directory = new File(fileDataTab+"/dataTab");
+        File Directory = new File(fileDataTab + "/dataTab");
         Directory.mkdirs();
 
         File mFolderI = new File(fileDataTab);
         if (!mFolder.exists()) {
             mFolder.mkdir();
         }
-        File DirectoryI = new File(fileDataTab+"/My Files");
+        File DirectoryI = new File(fileDataTab + "/My Files");
         DirectoryI.mkdirs();
- System.out.println(fileDataTab + "   fileDataTab");
+        System.out.println(fileDataTab + "   fileDataTab");
         if (!file.exists()) {  //sprawdza czy lokalizacja pliku nie istnieje
             System.out.println(!file.exists() + " iiiiiiiiiiiiiiiiii");
             storageDir.mkdirs();   //tworzy lokalizacje
-            if( storageDir.mkdirs()==true){
+            if (storageDir.mkdirs() == true) {
                 System.out.println("lokalizacja fileDataTab udana");
-            }else {
+            } else {
                 System.out.println("lokalizacja fileDataTab nie udana");
             }
         }
@@ -376,13 +371,13 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         System.out.println(storageDirMy_Files + "   storageDirMy_Files");
         if (!storageDirMy_Files.exists()) {  //sprawdza czy lokalizacja pliku nie istnieje
             storageDirMy_Files.mkdirs();   //tworzy lokalizacje
-            if(storageDirMy_Files.mkdirs()==true){
+            if (storageDirMy_Files.mkdirs() == true) {
                 System.out.println("lokalizacja storageDirMy_Files udana");
             }
         }
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
         updateProduct();
-          getSupportActionBar().hide();
+        getSupportActionBar().hide();
 
         sqliteToExcel = new SQLiteToExcel(getApplicationContext(), DBHelperInitializer.DB_NAME, directory_path);
         sqliteToExcel.exportAllTables("data.xls", new SQLiteToExcel.ExportListener() {
@@ -402,7 +397,7 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
                         .OnPositiveClicked(new TTFancyGifDialogListener() {
                             @Override
                             public void OnClick() {
-                                Toast.makeText(ProductUpdateActivity.this,"Ok",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ProductUpdateActivity.this, "Ok", Toast.LENGTH_SHORT).show();
                             }
                         })
 
@@ -423,7 +418,7 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
                         .OnPositiveClicked(new TTFancyGifDialogListener() {
                             @Override
                             public void OnClick() {
-                                Toast.makeText(ProductUpdateActivity.this,"Ok",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ProductUpdateActivity.this, "Ok", Toast.LENGTH_SHORT).show();
                             }
                         })
 
@@ -453,11 +448,11 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
 
         if (!storageDirMy_Filess.exists()) {  //sprawdza czy lokalizacja pliku nie istnieje
             storageDirMy_Filess.mkdir();   //tworzy lokalizacje
-            if(storageDirMy_Filess.mkdir()==true){
+            if (storageDirMy_Filess.mkdir() == true) {
                 System.out.println("lokalizacja storageDirMy_Files udana");
             }
         }
-            dispatchTakeFullSizePictureIntent();
+        dispatchTakeFullSizePictureIntent();
     }
 
 
@@ -501,30 +496,30 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         }
     }
 
-private File createImageFile() throws IOException {
-    // Create an image file name
+    private File createImageFile() throws IOException {
+        // Create an image file name
 
-    Product product = getProductFromViewFields();
-    String file_foto_name = product.getProducer() + "_" + product.getCode() + "_" + product.getSpecies() + "_";
-    String nameFileImage = product.getProducer() + "_" + product.getCode();
-    String REPORTS_PHOTOS_DIR = Environment.DIRECTORY_PICTURES + "/reports_photos/" + nameFileImage;
+        Product product = getProductFromViewFields();
+        String file_foto_name = product.getProducer() + "_" + product.getCode() + "_" + product.getSpecies() + "_";
+        String nameFileImage = product.getProducer() + "_" + product.getCode();
+        String REPORTS_PHOTOS_DIR = Environment.DIRECTORY_PICTURES + "/reports_photos/" + nameFileImage;
 
-    String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-    String imageFileName =file_foto_name + "_" + timeStamp;
-    File storageDir = Environment.getExternalStoragePublicDirectory(REPORTS_PHOTOS_DIR);
-    if (!storageDir.exists()) {  //sprawdza czy lokalizacja pliku nie istnieje
-        storageDir.mkdir();   //tworzy lokalizacje
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = file_foto_name + "_" + timeStamp;
+        File storageDir = Environment.getExternalStoragePublicDirectory(REPORTS_PHOTOS_DIR);
+        if (!storageDir.exists()) {  //sprawdza czy lokalizacja pliku nie istnieje
+            storageDir.mkdir();   //tworzy lokalizacje
+        }
+        File image = File.createTempFile(
+                imageFileName,  /* prefix *  nazwa pliku*/
+                ".jpg",         /* suffix */
+                storageDir      /* directory */
+
+        );
+        // Save a file: path for use with ACTION_VIEW intents
+        mCurrentPhotoPath = image.getAbsolutePath();
+        return image;
     }
-    File image = File.createTempFile(
-            imageFileName,  /* prefix *  nazwa pliku*/
-            ".jpg",         /* suffix */
-            storageDir      /* directory */
-
-    );
-    // Save a file: path for use with ACTION_VIEW intents
-    mCurrentPhotoPath = image.getAbsolutePath();
-    return image;
-}
 
     private void dispatchTakeFullSizePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -532,7 +527,7 @@ private File createImageFile() throws IOException {
         boolean wynikI;
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             // Create the File where the photo should go
-             wynikI = true;
+            wynikI = true;
             System.out.println(wynikI + " wynik");
             File photoFile = null;
             try {
@@ -587,6 +582,7 @@ private File createImageFile() throws IOException {
 //        startActivity(new Intent(ProductUpdateActivity.this, EmailAutoActivity.class));
 
     }
+
     public void open_gallery_app(View view) {
         Intent intent = new Intent();
         intent.setAction(android.content.Intent.ACTION_VIEW);
@@ -605,7 +601,7 @@ private File createImageFile() throws IOException {
                     (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 
             NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-                    activeNetwork.isConnectedOrConnecting();
+            activeNetwork.isConnectedOrConnecting();
         }
     }
 
@@ -617,6 +613,7 @@ private File createImageFile() throws IOException {
         System.out.println(localFile + "  localFilelocalFilelocalFilelocalFilelocalFile");
         return localFile;
     }
+
     public ArrayList<imageFolder> getPicturePaths() {
         ArrayList<imageFolder> picFolders = new ArrayList<>();
         ArrayList<String> picPaths = new ArrayList<>();
@@ -688,21 +685,17 @@ private File createImageFile() throws IOException {
     public void onPicClicked(String pictureFolderPath, String folderName) {
         Intent move = new Intent(ProductUpdateActivity.this, ImageDisplay.class);
         //---------------------------
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
-        {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-            File f = new File("file://"+ Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES));
+            File f = new File("file://" + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES));
             Uri contentUri = Uri.fromFile(f);
             mediaScanIntent.setData(contentUri);
             this.sendBroadcast(mediaScanIntent);
 
-            System.out.println("file://"+ Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES) );
-        }
-        else
-        {
+            System.out.println("file://" + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES));
+        } else {
             sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" + Environment.getExternalStorageDirectory())));
         }
-
 
 
         //------------------------

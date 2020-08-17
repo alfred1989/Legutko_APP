@@ -98,7 +98,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:hint="name ID"
+                        android:text="name ID"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000"></EditText>
 
@@ -109,7 +109,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:hint="producent ID"
+                        android:text="producent ID"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000"></EditText>
 
@@ -120,7 +120,7 @@
                         android:layout_weight="3"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:hint="numert reprodukcji OD"
+                        android:text="numert reprodukcji OD"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000"></EditText>
                 </TableRow>
@@ -183,7 +183,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:hint="nasiona wlasne ID"
+                        android:text="nasiona wlasne ID"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000"></EditText>
 
@@ -194,7 +194,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:hint="nazwa łacinska ID"
+                        android:text="nazwa łacinska ID"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000"></EditText>
 
@@ -205,7 +205,7 @@
                         android:layout_weight="3"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:hint="numert reprodukcji OD"
+                        android:text="numert reprodukcji OD"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000"></EditText>
                 </TableRow>
@@ -278,7 +278,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:hint="partia ID"
+                        android:text="partia ID"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000"></EditText>
 
@@ -289,7 +289,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:hint="grupa ID"
+                        android:text="grupa ID"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000"></EditText>
 
@@ -300,7 +300,7 @@
                         android:layout_weight="3"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:hint="subgrupa ID"
+                        android:text="subgrupa ID"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000"></EditText>
                     <EditText
@@ -310,7 +310,7 @@
                         android:layout_weight="3"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:hint="Kontrakt"
+                        android:text="Kontrakt"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000"></EditText>
                 </TableRow>
@@ -383,7 +383,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:hint="kolor ID"
+                        android:text="kolor ID"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="	#000000"/>
 
@@ -394,7 +394,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:hint="szacowany plon ID"
+                        android:text="szacowany plon ID"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="	#000000"/>
 
@@ -405,7 +405,7 @@
                         android:layout_weight="3"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:hint="subgrupa ID"
+                        android:text="subgrupa ID"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="	#000000"/>
                     <EditText
@@ -415,7 +415,7 @@
                         android:layout_weight="3"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:hint="Pow. Plantacji"
+                        android:text="Pow. Plantacji"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="	#000000"/>
                 </TableRow>
@@ -539,7 +539,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:hint="Dane Historyczne"
+                        android:text="Dane Historyczne"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="	#000000"></EditText>
 
@@ -551,7 +551,6 @@
             <Space android:layout_height="12dp"></Space>
 
             -----------------------------------------------------------------------------------------
-
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -588,7 +587,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:hint="Ostatnio dodany"
+                        android:text="Ostatnio dodany"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="	#000000"></TextView>
 
@@ -637,7 +636,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:hint="Typowa"
+                        android:text="Typowa"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="	#000000"></EditText>
 
@@ -646,6 +645,7 @@
 
 
             </TableLayout>
+
 
             -----------------------------------------------------------------------------------------
 
@@ -786,117 +786,125 @@
                         />
                 </TableRow>
             </TableLayout>
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="418dp"
+                android:layout_height="450dp"
+                android:layout_margin="160dp"
+                android:rotation="90" />
 
 
+            <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context="com.GallegryImgActivity">
 
-<!--            <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--                xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--                xmlns:tools="http://schemas.android.com/tools"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:orientation="vertical"-->
-<!--                tools:context="com.GallegryImgActivity">-->
-
-
-<!--                <RelativeLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:background="@android:color/transparent">-->
-
-
-<!--                    &lt;!&ndash;                    </com.utils.AutoFitRecyclerView>&ndash;&gt;-->
-<!--                </RelativeLayout>-->
+                <EditText
+                    android:id="@+id/descriptionInPL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent">
 
 
-<!--                <EditText-->
-<!--                    android:id="@+id/empty"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_gravity="center"-->
-<!--                    android:background="@android:color/transparent"-->
-<!--                    android:textSize="18sp"-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:visibility="gone" />-->
+                    <!--                    </com.utils.AutoFitRecyclerView>-->
+                </RelativeLayout>
 
-<!--            </FrameLayout>-->
 
-<!--            <TableRow-->
-<!--                android:background="@android:color/transparent"-->
-<!--                android:padding="5dp">-->
+                <EditText
+                    android:id="@+id/empty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:background="@android:color/transparent" />-->
+            </FrameLayout>
 
-<!--            </TableRow>-->
+            <TableRow
+                android:background="@android:color/transparent"
+                android:padding="5dp">
 
-<!--            <TableRow-->
-<!--                android:background="@android:color/transparent"-->
-<!--                android:padding="5dp">-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent" />
+
+            </TableRow>
+
+            <TableRow
+                android:background="@android:color/transparent"
+                android:padding="5dp">
 
                 <EditText
                     android:id="@+id/comment"
-                    android:textColor="@android:color/transparent"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Comment"
-                    />
+                    android:textColor="@android:color/transparent" />
 
-<!--            </TableRow>-->
+            </TableRow>
 
 
 
-<!--            <TableRow-->
+            <TableRow
 
-<!--                android:background="@android:color/transparent"-->
-<!--                android:padding="5dp">-->
+                android:background="@android:color/transparent"
+                android:padding="5dp">
 
-<!--                <EditText-->
-<!--                    android:id="@+id/commentPL"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:background="@android:color/transparent"-->
-<!--                    android:text="Description"-->
-<!--                    android:textColor="@android:color/transparent" />-->
-<!--            </TableRow>-->
+                <EditText
+                    android:id="@+id/commentPL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:text="Description"
+                    android:textColor="@android:color/transparent" />
+            </TableRow>
 
             <EditText
                 android:id="@+id/plantation_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
-                 />
+                android:text="TextView" />
 
-<!--            <EditText-->
-<!--                android:id="@+id/descriptionInEnglish"-->
-<!--                android:layout_width="match_parent"-->
+            <EditText
+                android:id="@+id/descriptionInEnglish"
+                android:layout_width="match_parent"
 
-<!--                android:layout_height="wrap_content"-->
-<!--                android:background="@android:color/transparent"-->
-<!--                android:text="TextView" />-->
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="TextView" />
 
-<!--            <TableRow-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content">-->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-<!--                <Switch-->
-<!--                    android:id="@+id/switch_standard_plantation_typical"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:background="@android:color/transparent"-->
-<!--                    android:gravity="center"-->
-<!--                    android:padding="5dp"-->
-<!--                    android:text="Typowa"-->
-<!--                    android:textAppearance="?android:attr/textAppearanceSmall"-->
-<!--                    android:textColor="#000000"></Switch>-->
+                <Switch
+                    android:id="@+id/switch_standard_plantation_typical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Typowa"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#000000"></Switch>
 
 
-<!--            </TableRow>-->
+            </TableRow>
 
 
         </TableLayout>
