@@ -43,6 +43,7 @@ public class ProductAddActivity extends AppCompatActivity {
     TextView descriptionInEnglishField;
     TextView commentPLField;
     TextView symbolField;
+    TextView historical_dataField;
     TextView own_seed_batchField;
     EditText switchStandardPlantation;
     EditText switchStandardPlantationTypical;
@@ -83,6 +84,7 @@ public class ProductAddActivity extends AppCompatActivity {
         descriptionInEnglishField = findViewById(R.id.descriptionInEnglish);
         commentPLField = findViewById(R.id.commentPL);
         symbolField = findViewById(R.id.symbol);
+        historical_dataField = findViewById(R.id.historical_data);
         own_seed_batchField = findViewById(R.id.own_seed_batch);
         switchStandardPlantation = findViewById(R.id.switch_standard_plantation);
         switchStandardPlantationTypical = findViewById(R.id.switch_standard_plantation_typical);
@@ -119,6 +121,7 @@ public class ProductAddActivity extends AppCompatActivity {
         String code = codeField.getText().toString().trim();
         String plantationId = plantationIdField.getText().toString().trim();
         String symbol = symbolField.getText().toString().trim();
+        String historical_data = historical_dataField.getText().toString().trim();
         String powierzchnia = commentaryInPLField.getText().toString().trim();
         String own_seed_batch = own_seed_batchField.getText().toString().trim();
         System.out.println(own_seed_batch + "   own_seed_batch ");
@@ -141,7 +144,7 @@ public class ProductAddActivity extends AppCompatActivity {
         String commentaryInPL = own_seed_batch;
         DBHelperInitializer db = new DBHelperInitializer(this);
         Product product = new Product(productId, producer, species, name, variety, color, group, subgroup, estimatedCrop, offPresence,
-                offPercentage, description, standardPlantation, comment, batch, code, plantationId, commentaryInPL, descriptionInEnglish, symbol);
+                offPercentage, description, standardPlantation, comment, batch, code, plantationId, commentaryInPL, descriptionInEnglish, symbol,historical_data);
         long result = db.addProduct(product);
         if (result != -1) {
             Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();

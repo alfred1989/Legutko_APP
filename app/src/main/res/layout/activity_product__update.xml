@@ -464,6 +464,54 @@
 
             <Space android:layout_height="12dp"></Space>
             -----------------------------------------------------------------------------------------
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#DAE8FC"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#3da549">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Opis plantacji "
+                        android:textColor="	#000000"
+                        android:textSize="16dp"></TextView>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/historical_dataField_activiti"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Typowa"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="	#000000"></EditText>
+
+
+                </TableRow>
+
+
+            </TableLayout>
+            <Space android:layout_height="12dp"></Space>
+
+            -----------------------------------------------------------------------------------------
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -620,6 +668,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         />
+
                     <Button
                         android:background="@drawable/ic_gallery"
                         android:layout_width="wrap_content"
@@ -627,8 +676,9 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
+                        android:onClick="opegnJPG"
                         android:textColor="	#000000"
-                        android:textSize="16dp"></Button>
+                        android:textSize="16dp" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

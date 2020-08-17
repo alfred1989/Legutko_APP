@@ -112,6 +112,7 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
     TextView dField;
     TextView commentPLField;
     TextView symbolField;
+    TextView historical_dataField;
     TextView own_seed_batchField;
     Switch switchStandardPlantation;
     Switch switchStandardPlantationTypical;
@@ -192,6 +193,7 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
 //        dField = findViewById(R.id.d);
         commentPLField = findViewById(R.id.commentPL);
         symbolField = findViewById(R.id.symbol);
+        historical_dataField = findViewById(R.id.historical_dataField_activiti);
         own_seed_batchField = findViewById(R.id.own_seed_batch);
 
 
@@ -230,6 +232,7 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         descriptionInEnglishField.setText(product.getDescriptionInPL());
         commentPLField.setText(product.getDescriptionInPL());
         symbolField.setText(product.getSymbol());
+        historical_dataField.setText(product.getHistorical_data());
         own_seed_batchField.setText(product.getDescriptionInPL());
 
 
@@ -336,6 +339,7 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         String code = codeField.getText().toString().trim();
         String plantationId = plantationIdField.getText().toString().trim();
         String symbol = symbolField.getText().toString().trim();
+        String historical_data = historical_dataField.getText().toString().trim();
         String powierzchnia = commentaryInPLField.getText().toString().trim();
         String own_seed_batch = own_seed_batchField.getText().toString().trim();
         System.out.println(own_seed_batch + "   own_seed_batch ");
@@ -450,29 +454,11 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
 //
 //
 //        System.out.println( len+" estimatedCropField.getText() estimatedCropField.getText() estimatedCropField.getText()");
-        System.out.println(producer + " producer");
-        System.out.println(species + " species");
-        System.out.println(name + " name");
-        System.out.println(variety + " variety");
-        System.out.println(color + " color");
-        System.out.println(group + " group");
-        System.out.println(subgroup + " subgroup");
-        System.out.println(estimatedCrop + " estimatedCrop");
-        System.out.println(offPresence + " offPresence");
-        System.out.println(offPercentage + " offPercentage");
-        System.out.println(description + " description");
-        System.out.println(standardPlantation + " standardPlantation");
-        System.out.println(comment + " comment");
-        System.out.println(batch + " batch");
-        System.out.println(code + " code");
-        System.out.println(plantationId + " plantationId");
-        System.out.println(commentaryInPL + " commentaryInPL");
-        System.out.println(descriptionInEnglish + " descriptionInEnglish");
-        System.out.println(symbol + " symbol");
+   
         descriptionInEnglish = own_seed_batch;
 
         return new Product(productId, producer, species, name, variety, color, group, subgroup, estimatedCrop, offPresence,
-                offPercentage, description, standardPlantation, comment, batch, code, plantationId, commentaryInPL, descriptionInEnglish, symbol);
+                offPercentage, description, standardPlantation, comment, batch, code, plantationId, commentaryInPL, descriptionInEnglish, symbol, historical_data);
 //        return new Product(productId, producer, species, name, variety, color, group, subgroup, estimatedCrop, offPresence,
 //                offPercentage, description, standardPlantation, comment, batch, code, plantationId,commentaryInPL, descriptionInEnglish);
 
@@ -1120,7 +1106,9 @@ private File createImageFile() throws IOException {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
-
+//----------------
+  
+//-------------------------
 
     static class MyBroadCastReviecer extends BroadcastReceiver {
 

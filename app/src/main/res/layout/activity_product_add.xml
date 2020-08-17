@@ -693,6 +693,11 @@
                 android:background="@android:color/transparent"
                 android:text="TextView" />
 
+            <EditText
+                android:id="@+id/historical_data"
+                android:layout_width="wrap_content"
+                android:text="Description" />
+
         </TableLayout>
 
     </ScrollView>
