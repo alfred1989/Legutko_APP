@@ -20,6 +20,8 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -28,24 +30,29 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.ImageDisplay;
 import com.ajts.androidmads.library.SQLiteToExcel;
 import com.bestsoft32.tt_fancy_gif_dialog_lib.TTFancyGifDialog;
 import com.bestsoft32.tt_fancy_gif_dialog_lib.TTFancyGifDialogListener;
+import com.example.legutkoapplication.MainActivity;
 import com.example.legutkoapplication.R;
 import com.example.legutkoapplication.RefreshingActivity;
 import com.example.legutkoapplication.Utils;
 import com.example.legutkoapplication.database.DBHelperInitializer;
 import com.example.legutkoapplication.model.Product;
+import com.utils.MarginDecoration;
 import com.utils.PicHolder;
 import com.utils.imageFolder;
 import com.utils.itemClickListener;
 import com.utils.pictureFacer;
+import com.utils.pictureFolderAdapter;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -102,20 +109,39 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
     private BroadcastReceiver br;
     public int numberOfClicks = 0;
     String timeStamp = new SimpleDateFormat("yyyy_MM_dd", Locale.getDefault()).format(System.currentTimeMillis());
-
+    RecyclerView folderRecycler;
+    TextView empty;
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product__update);
 
-
-        if (ContextCompat.checkSelfPermission(ProductUpdateActivity.this,
+        if(ContextCompat.checkSelfPermission(ProductUpdateActivity.this,
                 Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED)
             ActivityCompat.requestPermissions(ProductUpdateActivity.this,
                     new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                     MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
+        //____________________________________________________________________________________
+
+        empty =findViewById(R.id.empty);
+
+        folderRecycler = findViewById(R.id.folderRecycler);
+        folderRecycler.addItemDecoration(new MarginDecoration(this));
+        folderRecycler.hasFixedSize();
+        ArrayList<imageFolder> folds = getPicturePaths();
+
+        if(folds.isEmpty()){
+            empty.setVisibility(View.VISIBLE);
+        }else{
+            RecyclerView.Adapter folderAdapter = new pictureFolderAdapter(folds, ProductUpdateActivity.this,this);
+            folderRecycler.setAdapter(folderAdapter);
+        }
+
+        changeStatusBarColor();
+
         dbHelper = new DBHelperInitializer(this);
         mImageView = findViewById(R.id.imageView);
         br = new MyBroadCastReviecer();
@@ -591,6 +617,11 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         startActivity(intent);
     }
 
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
+
     static class MyBroadCastReviecer extends BroadcastReceiver {
 
         private static final String TAG = "MyBroadCastReceiver";
@@ -614,33 +645,26 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         return localFile;
     }
 
-    public ArrayList<imageFolder> getPicturePaths() {
+    private ArrayList<imageFolder> getPicturePaths(){
         ArrayList<imageFolder> picFolders = new ArrayList<>();
         ArrayList<String> picPaths = new ArrayList<>();
         Uri allImagesuri = android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
-        String[] projection = {MediaStore.Images.ImageColumns.DATA, MediaStore.Images.Media.DISPLAY_NAME,
-                MediaStore.Images.Media.BUCKET_DISPLAY_NAME, MediaStore.Images.Media.BUCKET_ID};
+        String[] projection = { MediaStore.Images.ImageColumns.DATA ,MediaStore.Images.Media.DISPLAY_NAME,
+                MediaStore.Images.Media.BUCKET_DISPLAY_NAME,MediaStore.Images.Media.BUCKET_ID};
         Cursor cursor = this.getContentResolver().query(allImagesuri, projection, null, null, null);
         try {
             if (cursor != null) {
                 cursor.moveToFirst();
             }
-            do {
+            do{
                 imageFolder folds = new imageFolder();
                 String name = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DISPLAY_NAME));
                 String folder = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.BUCKET_DISPLAY_NAME));
                 String datapath = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA));
-//                String a = "/storage/emulated/0/Pictures/reports_photos/SHEN_00013/";
+
                 //String folderpaths =  datapath.replace(name,"");
-                String folderpaths = datapath.substring(0, datapath.lastIndexOf(folder + "/"));
-                folderpaths = folderpaths + folder + "/";
-//                String folderpaths ="/storage/emulated/0/DCIM/Camera";
-
-
-                System.out.println(folderpaths + " folderpa");
-                System.out.println(folder + " folder");
-
-
+                String folderpaths = datapath.substring(0, datapath.lastIndexOf(folder+"/"));
+                folderpaths = folderpaths+folder+"/";
                 if (!picPaths.contains(folderpaths)) {
                     picPaths.add(folderpaths);
 
@@ -649,22 +673,30 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
                     folds.setFirstPic(datapath);//if the folder has only one picture this line helps to set it as first so as to avoid blank image in itemview
                     folds.addpics();
                     picFolders.add(folds);
-                } else {
-                    for (int i = 0; i < picFolders.size(); i++) {
-                        if (picFolders.get(i).getPath().equals(folderpaths)) {
+                }else{
+                    for(int i = 0;i<picFolders.size();i++){
+                        if(picFolders.get(i).getPath().equals(folderpaths)){
                             picFolders.get(i).setFirstPic(datapath);
                             picFolders.get(i).addpics();
                         }
                     }
                 }
-            } while (cursor.moveToNext());
+            }while(cursor.moveToNext());
             cursor.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        for (int i = 0; i < picFolders.size(); i++) {
-            Log.d("picture folders", picFolders.get(i).getFolderName() + " and path = " + picFolders.get(i).getPath() + " " + picFolders.get(i).getNumberOfPics());
+        for(int i = 0;i < picFolders.size();i++){
+            Log.d("picture folders",picFolders.get(i).getFolderName()+" and path = "+picFolders.get(i).getPath()+" "+picFolders.get(i).getNumberOfPics());
         }
+
+        //reverse order ArrayList
+       /* ArrayList<imageFolder> reverseFolders = new ArrayList<>();
+
+        for(int i = picFolders.size()-1;i > reverseFolders.size()-1;i--){
+            reverseFolders.add(picFolders.get(i));
+        }*/
+
         return picFolders;
     }
 
@@ -678,36 +710,30 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
      * Each time an item in the RecyclerView is clicked this method from the implementation of the transitListerner
      * in this activity is executed, this is possible because this class is passed as a parameter in the creation
      * of the RecyclerView's Adapter, see the adapter class to understand better what is happening here
-     *
      * @param pictureFolderPath a String corresponding to a folder path on the device external storage
      */
     @Override
-    public void onPicClicked(String pictureFolderPath, String folderName) {
-        Intent move = new Intent(ProductUpdateActivity.this, ImageDisplay.class);
-        //---------------------------
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-            File f = new File("file://" + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES));
-            Uri contentUri = Uri.fromFile(f);
-            mediaScanIntent.setData(contentUri);
-            this.sendBroadcast(mediaScanIntent);
+    public void onPicClicked(String pictureFolderPath,String folderName) {
+        Intent move = new Intent(ProductUpdateActivity.this,ImageDisplay.class);
+        move.putExtra("folderPath",pictureFolderPath);
+        move.putExtra("folderName",folderName);
 
-            System.out.println("file://" + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES));
-        } else {
-            sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" + Environment.getExternalStorageDirectory())));
-        }
-
-
-        //------------------------
-        String folderPath = returnNameFile();
-
-        pictureFolderPath = "/storage/emulated/0/Pictures/reports_photos/" + folderPath + "/";
-
-
-        System.out.println(folderPath + "                folderPath folderPath");
-        move.putExtra("folderPath", pictureFolderPath);
-        move.putExtra("folderName", folderName);
+        //move.putExtra("recyclerItemSize",getCardsOptimalWidth(4));
         startActivity(move);
+    }
+
+
+    /**
+     * Default status bar height 24dp,with code API level 24
+     */
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    private void changeStatusBarColor()
+    {
+        Window window = this.getWindow();
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.setStatusBarColor(ContextCompat.getColor(getApplicationContext(),R.color.black));
+
     }
 
 }

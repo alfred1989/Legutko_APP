@@ -32,8 +32,6 @@
         </androidx.cardview.widget.CardView>
 
         <com.utils.AutoFitRecyclerView
-
-
             android:layout_below="@id/head"
             android:id="@+id/recycler"
             android:layout_width="match_parent"
