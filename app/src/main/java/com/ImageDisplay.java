@@ -24,6 +24,8 @@ import com.utils.picture_Adapter;
 
 import java.util.ArrayList;
 
+import static android.provider.OpenableColumns.DISPLAY_NAME;
+
 /**
  * Author CodeBoy722
  *
@@ -58,7 +60,9 @@ public class ImageDisplay extends AppCompatActivity implements itemClickListener
         if(allpictures.isEmpty()){
             load.setVisibility(View.VISIBLE);
             allpictures = getAllImagesByFolder(foldePath);
-            System.out.println(load + "to jest load");
+
+            System.out.println(allpictures + "  allpictures");
+            System.out.println(foldePath + "   foldePath");
 
             imageRecycler.setAdapter(new picture_Adapter(allpictures,ImageDisplay.this,this));
             load.setVisibility(View.GONE);
@@ -107,9 +111,12 @@ public class ImageDisplay extends AppCompatActivity implements itemClickListener
      * and ArrayList of pictureFacer a custom object that holds data of a given image
      * @param path a String corresponding to a folder path on the device external storage
      */
-    public ArrayList<pictureFacer> getAllImagesByFolder(String path){
+    public ArrayList<pictureFacer> getAllImagesByFolder(String path ){
+
         ArrayList<pictureFacer> images = new ArrayList<>();
         Uri allVideosuri = android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+
+
 
 
 
@@ -122,9 +129,8 @@ public class ImageDisplay extends AppCompatActivity implements itemClickListener
                 pictureFacer pic = new pictureFacer();
 
                 pic.setPicturName(cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DISPLAY_NAME)));
-
+                    System.out.println(DISPLAY_NAME + "  DISPLAY_NAME");
                 pic.setPicturePath(cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)));
-
                 pic.setPictureSize(cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.SIZE)));
 
                 images.add(pic);

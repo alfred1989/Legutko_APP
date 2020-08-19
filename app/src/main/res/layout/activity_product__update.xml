@@ -805,10 +805,10 @@
                         />
                 </TableRow>
             </TableLayout>
+
             <RelativeLayout
-                android:background="@color/black"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_width="256dp"
+                android:layout_height="95dp">
 
 
                 <androidx.cardview.widget.CardView
@@ -818,47 +818,39 @@
                     app:cardBackgroundColor="@color/black">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="460dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|start"
-                        android:text="photos_name"
+                        android:layout_marginStart="200dp"
+                        android:layout_marginLeft="200dp"
+                        android:text="Kliknij aby zobaczyć galerie tej plantacji"
                         android:textColor="@color/white"
-                        android:textSize="35sp"
-                        android:textStyle="bold"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginStart="10dp" />
+                        android:textSize="30sp" />
 
+                    <com.utils.AutoFitRecyclerView
+                        android:id="@+id/folderRecycler"
+                        android:layout_width="154dp"
+                        android:layout_height="117dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="-5dp"
+                        android:layout_marginEnd="637dp"
+                        android:layout_marginRight="637dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/ic_gallery"
+                        android:clipToPadding="false"
+                        android:columnWidth="@dimen/folder_column_width">
 
-                    <ImageButton
-                        android:id="@+id/menu"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@android:color/transparent"
-                        android:src="@drawable/ic_action_menu"
-                        android:tint="@color/white" />
-
-
-                </androidx.cardview.widget.CardView>
-
-                <com.utils.AutoFitRecyclerView
-                    android:id="@+id/folderRecycler"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/black"
-                    android:columnWidth="@dimen/folder_column_width"
-                    android:clipToPadding="false"
-                    android:layout_below="@id/head">
-
-                    <!--app:fastScrollEnabled="true"
+                        <!--app:fastScrollEnabled="true"
                app:fastScrollHorizontalThumbDrawable="@drawable/thumb_drawable"
                app:fastScrollHorizontalTrackDrawable="@drawable/line_drawable"
                app:fastScrollVerticalThumbDrawable="@drawable/thumb_drawable"
                app:fastScrollVerticalTrackDrawable="@drawable/line_drawable"-->
 
-                </com.utils.AutoFitRecyclerView>
+                    </com.utils.AutoFitRecyclerView>
+
+
+                </androidx.cardview.widget.CardView>
 
             </RelativeLayout>
             <ImageView

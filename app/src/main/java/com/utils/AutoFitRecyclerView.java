@@ -50,6 +50,8 @@ public class AutoFitRecyclerView extends RecyclerView {
 
         manager = new GridLayoutManager(getContext(), 1);
         setLayoutManager(manager);
+
+
     }
 
 
@@ -59,7 +61,9 @@ public class AutoFitRecyclerView extends RecyclerView {
         if (columnWidth > 0) {
             int spanCount = Math.max(1, getMeasuredWidth() / columnWidth);
             manager.setSpanCount(spanCount);
+
         }
+
     }
 
 

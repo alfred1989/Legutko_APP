@@ -65,6 +65,7 @@ public class pictureFolderAdapter extends RecyclerView.Adapter<pictureFolderAdap
             @Override
             public void onClick(View v) {
                 listenToClick.onPicClicked(folder.getPath(),folder.getFolderName());
+
             }
         });
 

@@ -530,7 +530,8 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         Product product = getProductFromViewFields();
         String file_foto_name = product.getProducer() + "_" + product.getCode() + "_" + product.getSpecies() + "_";
         String nameFileImage = product.getProducer() + "_" + product.getCode();
-        String REPORTS_PHOTOS_DIR = Environment.DIRECTORY_PICTURES + "/reports_photos/" + nameFileImage;
+//        String REPORTS_PHOTOS_DIR = Environment.DIRECTORY_PICTURES + "/reports_photos/" + nameFileImage;
+        String REPORTS_PHOTOS_DIR =  "zdjęcia -"+nameFileImage;
 
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = file_foto_name + "_" + timeStamp;
@@ -718,10 +719,10 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
     public void onPicClicked(String pictureFolderPath,String folderName) {
         Intent move = new Intent(ProductUpdateActivity.this,ImageDisplay.class);
         String name_product =returnNameFile();
-        move.putExtra("folderPath",pictureFolderPath);
-        move.putExtra("folderName",name_product);
+        move.putExtra("folderPath","/storage/emulated/0/zdjęcia -"+name_product+"/");
+        System.out.println(pictureFolderPath+ "  pictureFolderPath");
+//        move.putExtra("folderName",name_product);
 
-System.out.println(name_product + "  name_product");
         //move.putExtra("recyclerItemSize",getCardsOptimalWidth(4));
         startActivity(move);
     }
