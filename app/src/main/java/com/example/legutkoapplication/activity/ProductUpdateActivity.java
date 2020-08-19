@@ -118,6 +118,7 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product__update);
 
+
         if(ContextCompat.checkSelfPermission(ProductUpdateActivity.this,
                 Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED)
@@ -225,7 +226,8 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
 
             findViewById(R.id.description).setBackgroundColor(Color.parseColor("#ff5130"));
         }
-
+        String nameFileImage = product.getProducer() + "_" + product.getCode();
+        System.out.println(nameFileImage+"   nameFileImage ");
 
     }
 
@@ -511,7 +513,7 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
             System.out.println("if II----------------------------------");
 
             setPic();
-            mButtonCapture.setEnabled(true);
+//            mButtonCapture.setEnabled(true);
         }
     }
 
@@ -715,9 +717,11 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
     @Override
     public void onPicClicked(String pictureFolderPath,String folderName) {
         Intent move = new Intent(ProductUpdateActivity.this,ImageDisplay.class);
+        String name_product =returnNameFile();
         move.putExtra("folderPath",pictureFolderPath);
-        move.putExtra("folderName",folderName);
+        move.putExtra("folderName",name_product);
 
+System.out.println(name_product + "  name_product");
         //move.putExtra("recyclerItemSize",getCardsOptimalWidth(4));
         startActivity(move);
     }
