@@ -117,8 +117,7 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product__update);
-
-
+    
         if(ContextCompat.checkSelfPermission(ProductUpdateActivity.this,
                 Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED)
@@ -465,6 +464,8 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
 
     public void onCaptureButton(View v) {
         String REPORTS_PHOTOS_DIR = directory_path;   //zapis zdjecia w folderze data
+
+        System.out.println(directory_path + "   directory_path");
         String fileDataTab = Environment.getExternalStorageDirectory().getPath();
         File mFolder = new File(REPORTS_PHOTOS_DIR);
         if (!mFolder.exists()) {
@@ -531,7 +532,8 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         String file_foto_name = product.getProducer() + "_" + product.getCode() + "_" + product.getSpecies() + "_";
         String nameFileImage = product.getProducer() + "_" + product.getCode();
 //        String REPORTS_PHOTOS_DIR = Environment.DIRECTORY_PICTURES + "/reports_photos/" + nameFileImage;
-        String REPORTS_PHOTOS_DIR =  "zdjęcia -"+nameFileImage;
+        String REPORTS_PHOTOS_DIR =  nameFileImage;
+        System.out.println(Environment.DIRECTORY_PICTURES +"/"+nameFileImage + "   Environment.DIRECTORY_PICTURES");
 
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = file_foto_name + "_" + timeStamp;
@@ -717,10 +719,12 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
      */
     @Override
     public void onPicClicked(String pictureFolderPath,String folderName) {
+
         Intent move = new Intent(ProductUpdateActivity.this,ImageDisplay.class);
+
         String name_product =returnNameFile();
-        move.putExtra("folderPath","/storage/emulated/0/zdjęcia -"+name_product+"/");
-        System.out.println(pictureFolderPath+ "  pictureFolderPath");
+        move.putExtra("folderPath",name_product);
+        System.out.println(Environment.DIRECTORY_PICTURES +"/"+name_product + "  pictureFolderPath");
 //        move.putExtra("folderName",name_product);
 
         //move.putExtra("recyclerItemSize",getCardsOptimalWidth(4));
