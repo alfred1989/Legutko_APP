@@ -22,6 +22,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -531,8 +532,8 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         Product product = getProductFromViewFields();
         String file_foto_name = product.getProducer() + "_" + product.getCode() + "_" + product.getSpecies() + "_";
         String nameFileImage = product.getProducer() + "_" + product.getCode();
-//        String REPORTS_PHOTOS_DIR = Environment.DIRECTORY_PICTURES + "/reports_photos/" + nameFileImage;
-        String REPORTS_PHOTOS_DIR =  nameFileImage;
+        String REPORTS_PHOTOS_DIR = Environment.DIRECTORY_PICTURES + "/reports_photos/" + nameFileImage;
+//        String REPORTS_PHOTOS_DIR =  nameFileImage;
         System.out.println(Environment.DIRECTORY_PICTURES +"/"+nameFileImage + "   Environment.DIRECTORY_PICTURES");
 
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
@@ -547,9 +548,22 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
                 storageDir      /* directory */
 
         );
+
         // Save a file: path for use with ACTION_VIEW intents
         mCurrentPhotoPath = image.getAbsolutePath();
+galleryAddPic();
         return image;
+    }
+    private void galleryAddPic() {
+        try {
+            Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+            File f = new File(mCurrentPhotoPath);
+            Uri contentUri = Uri.fromFile(f);
+            mediaScanIntent.setData(contentUri);
+            this.sendBroadcast(mediaScanIntent);
+        } catch (Exception e) {
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void dispatchTakeFullSizePictureIntent() {
@@ -625,6 +639,21 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }
+
+    public void opegnJPG(View view) {
+        String name_product =returnNameFile();
+        String REPORTS_PHOTOS_DIR = Environment.DIRECTORY_PICTURES;
+        File file = new File(REPORTS_PHOTOS_DIR);
+        Uri uri_path = Uri.fromFile(file);
+        String mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension
+                (MimeTypeMap.getFileExtensionFromUrl(REPORTS_PHOTOS_DIR));
+
+
+        Intent intent = new Intent(android.content.Intent.ACTION_VIEW);
+        intent.setType(mimeType);
+        intent.setDataAndType(uri_path, mimeType);
+        startActivity(intent);
     }
 
     static class MyBroadCastReviecer extends BroadcastReceiver {
@@ -719,11 +748,22 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
      */
     @Override
     public void onPicClicked(String pictureFolderPath,String folderName) {
-
+        String name_product =returnNameFile();
+//        File file = new File(name_product);
+//        Uri uri_path = Uri.fromFile(file);
+//        String mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension
+//                (MimeTypeMap.getFileExtensionFromUrl(name_product));
+//
+//
+//        Intent intent = new Intent(android.content.Intent.ACTION_VIEW);
+//        intent.setType(mimeType);
+//        intent.setDataAndType(uri_path, mimeType);
+//        startActivity(intent);
         Intent move = new Intent(ProductUpdateActivity.this,ImageDisplay.class);
 
-        String name_product =returnNameFile();
-        move.putExtra("folderPath",name_product);
+        String REPORTS_PHOTOS_DIR = Environment.DIRECTORY_PICTURES + "/reports_photos/" + name_product;
+
+        move.putExtra("folderPath",REPORTS_PHOTOS_DIR);
         System.out.println(Environment.DIRECTORY_PICTURES +"/"+name_product + "  pictureFolderPath");
 //        move.putExtra("folderName",name_product);
 
