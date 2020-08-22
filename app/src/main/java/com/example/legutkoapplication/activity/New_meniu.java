@@ -19,7 +19,7 @@ import com.hitomi.cmlibrary.OnMenuStatusChangeListener;
 
 public class New_meniu extends AppCompatActivity {
     String arrayName[] ={"Facebook",
-            "Twitter",
+            "Szukaj",
             "Youtube",
             "Windows",
             "Drive",};
@@ -56,7 +56,18 @@ public class New_meniu extends AppCompatActivity {
                             startActivity(new Intent(New_meniu.this, ProductAddActivity.class));
 
                         }
-                    }
+
+                        if(index==4){
+
+                                Intent intent = new Intent();
+                                intent.setAction(android.content.Intent.ACTION_VIEW);
+                                intent.setType("image/*");
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent);
+                            }
+
+                        }
+
                 }).setOnMenuStatusChangeListener(new OnMenuStatusChangeListener() {
 
             @Override

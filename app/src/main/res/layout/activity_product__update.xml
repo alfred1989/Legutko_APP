@@ -699,7 +699,7 @@
                     android:hint="% off"
                     android:inputType="textPersonName" />
             </LinearLayout>
-
+            <Space android:layout_height="12dp"></Space>
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -785,7 +785,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:onClick="opegnJPG"
+                        android:onClick="open_gallery_app"
                         android:textColor="	#000000"
                         android:textSize="16dp" />
                     <TextView
@@ -804,6 +804,7 @@
                         android:layout_weight="1"
                         />
                 </TableRow>
+                <Space android:layout_height="12dp"></Space>
             </TableLayout>
 
             <RelativeLayout
@@ -815,7 +816,7 @@
                     android:id="@+id/head"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    app:cardBackgroundColor="@color/black">
+                    app:cardBackgroundColor="@color/title_collor">
 
                     <TextView
                         android:layout_width="460dp"
@@ -827,6 +828,7 @@
                         android:textColor="@color/white"
                         android:textSize="30sp" />
 
+
                     <com.utils.AutoFitRecyclerView
                         android:id="@+id/folderRecycler"
                         android:layout_width="154dp"
@@ -837,7 +839,6 @@
                         android:layout_marginEnd="637dp"
                         android:layout_marginRight="637dp"
                         android:layout_marginBottom="2dp"
-                        android:background="@drawable/ic_gallery"
                         android:clipToPadding="false"
                         android:columnWidth="@dimen/folder_column_width">
 
