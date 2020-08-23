@@ -39,6 +39,7 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         TextView batch = view.findViewById(R.id.batch);
         TextView plantation_area = view.findViewById(R.id.plantation_area);
         TextView comment = view.findViewById(R.id.comment);
+        TextView contract = view.findViewById(R.id.contract);
 
         name.setText(product.getName());
         producer.setText(product.getProducer());
@@ -47,6 +48,8 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         standardPlantation.setText(product.getStandardPlantation());
         batch.setText(product.getBatch());
         comment.setText(product.getComment());
+        plantation_area.setText((product.getPlantation_area()));
+        contract.setText(product.getContract());
 
         return view;
     }

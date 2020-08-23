@@ -118,7 +118,7 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product__update);
-    
+
         if(ContextCompat.checkSelfPermission(ProductUpdateActivity.this,
                 Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED)
@@ -172,6 +172,8 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         recently_addedField = findViewById(R.id.recently_added);
         plantation_areaField = findViewById(R.id.plantation_area);
 
+
+
         //----------------------------Switch Standard Plantanion--------------------------------------------------
         switchStandardPlantation = findViewById(R.id.switch_standard_plantation);
         switchStandardPlantation.setOnCheckedChangeListener(this);
@@ -203,6 +205,8 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         historical_dataField.setText(product.getHistorical_data());
         contractField.setText(product.getContract());
         recently_addedField.setText(product.getRecently_added());
+        plantation_areaField.setText(product.getPlantation_area());
+
         String nameSpilt = product.getName();
         String[] nameSpiltTab = nameSpilt.split("/");
         nameField.setText(nameSpiltTab[0]);
@@ -228,6 +232,35 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         }
         String nameFileImage = product.getProducer() + "_" + product.getCode();
         System.out.println(nameFileImage+"   nameFileImage ");
+
+        //------------------------------------------------------------------------------------------
+        System.out.println("---------------------------------------------------------------------------");
+        System.out.println(product.getProducer()   + "product.getProducer())");
+        System.out.println(product.getSpecies()   + "product.getSpecies())");
+        System.out.println(product.getName()   + "product.getName())");
+        System.out.println(product.getVariety()   + "product.getVariety())");
+        System.out.println(product.getColor()   + "product.getColor())");
+        System.out.println(product.getGroup()   + "product.getGroup())");
+        System.out.println(product.getSubgroup()   + "product.getSubgroup())");
+        System.out.println(product.getEstimatedCrop()   + "product.getEstimatedCrop())");
+        System.out.println(product.getOffPresence()   + "product.getOffPresence())");
+        System.out.println(product.getOffPercentage()   + "product.getOffPercentage())");
+        System.out.println(product.getDescription()   + "product.getDescription())");
+        System.out.println(product.getStandardPlantation()   + "product.getStandardPlantation())");
+        System.out.println(product.getComment()   + "product.getComment())");
+        System.out.println(product.getBatch()   + "product.getBatch())");
+        System.out.println(product.getCode()   + "product.getCode())");
+        System.out.println(product.getPlantationId()   + "product.getPlantationId())");
+        System.out.println(product.getDescriptionInPL()   + "product.getDescriptionInPL())");
+        System.out.println(product.getSymbol()   + "product.getSymbol())");
+        System.out.println(product.getHistorical_data()   + "product.getHistorical_data())");
+        System.out.println(product.getContract()   + "product.getContract())");
+        System.out.println(product.getRecently_added()   + "product.getRecently_added())");
+        System.out.println("---------------------------------------------------------------------------");
+
+        //------------------------------------------------------------------------------------------
+
+
 
     }
 
@@ -294,6 +327,12 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         System.out.println();
         historical_data = historical_data + "; " + timeStamp + " " + recently_added;
         description = timeStamp + " " + recently_added;
+
+
+
+
+
+
         return new Product(productId, producer, species, name, variety, color, group, subgroup, estimatedCrop,
                 offPresence, offPercentage, description, standardPlantation, comment, batch, code, plantationId,
                 descriptionInPL, symbol, historical_data, contract, recently_added, plantation_area);
@@ -666,7 +705,7 @@ galleryAddPic();
                     (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 
             NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-            activeNetwork.isConnectedOrConnecting();
+//            activeNetwork.isConnectedOrConnecting();
         }
     }
 

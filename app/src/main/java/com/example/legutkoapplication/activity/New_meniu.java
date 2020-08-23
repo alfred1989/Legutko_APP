@@ -18,11 +18,11 @@ import com.hitomi.cmlibrary.OnMenuSelectedListener;
 import com.hitomi.cmlibrary.OnMenuStatusChangeListener;
 
 public class New_meniu extends AppCompatActivity {
-    String arrayName[] ={"Facebook",
+    String arrayName[] ={"Odśwież",
             "Szukaj",
-            "Youtube",
-            "Windows",
-            "Drive",};
+            "Wyślij",
+            "Dodaj Plantacje",
+            "Przeglądaj Galerie",};
 
 
     @Override
