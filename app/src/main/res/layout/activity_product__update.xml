@@ -484,7 +484,7 @@
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#3da549">
+                    android:background="#FFA500">
 
                     <EditText
                         android:id="@+id/standard_plantation"
@@ -493,8 +493,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="Plantacja Typowa/Nietypowa "
-                        android:textColor="#000000"
+                        android:text="Plantacja Typowa/Nietypowa Prosze podać wartość"
                         android:textSize="16dp"></EditText>
 
 

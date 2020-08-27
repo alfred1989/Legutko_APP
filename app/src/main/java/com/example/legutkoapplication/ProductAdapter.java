@@ -1,6 +1,7 @@
 package com.example.legutkoapplication;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,7 +51,15 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         comment.setText(product.getComment());
         plantation_area.setText((product.getPlantation_area()));
         contract.setText(product.getContract());
-
+        if (product.getStandardPlantation().equals("Nietypowa")) {
+            view.setBackgroundColor(Color.parseColor("#e21e13"));
+        }
+        if (product.getStandardPlantation().equals("Typowa")) {
+            view.setBackgroundColor(Color.parseColor("#ADFF2F"));
+        }
+        if (product.getStandardPlantation() == null ) {
+            view.setBackgroundColor(Color.parseColor("#FFA500"));
+        }
         return view;
     }
 }

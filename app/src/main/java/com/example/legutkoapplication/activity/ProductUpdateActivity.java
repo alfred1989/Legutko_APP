@@ -112,6 +112,7 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
     String timeStamp = new SimpleDateFormat("yyyy_MM_dd", Locale.getDefault()).format(System.currentTimeMillis());
     RecyclerView folderRecycler;
     TextView empty;
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @SuppressLint("WrongViewCast")
     @Override
@@ -119,7 +120,7 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product__update);
 
-        if(ContextCompat.checkSelfPermission(ProductUpdateActivity.this,
+        if (ContextCompat.checkSelfPermission(ProductUpdateActivity.this,
                 Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED)
             ActivityCompat.requestPermissions(ProductUpdateActivity.this,
@@ -127,17 +128,17 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
                     MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
         //____________________________________________________________________________________
 
-        empty =findViewById(R.id.empty);
+        empty = findViewById(R.id.empty);
 
         folderRecycler = findViewById(R.id.folderRecycler);
         folderRecycler.addItemDecoration(new MarginDecoration(this));
         folderRecycler.hasFixedSize();
         ArrayList<imageFolder> folds = getPicturePaths();
 
-        if(folds.isEmpty()){
+        if (folds.isEmpty()) {
             empty.setVisibility(View.VISIBLE);
-        }else{
-            RecyclerView.Adapter folderAdapter = new pictureFolderAdapter(folds, ProductUpdateActivity.this,this);
+        } else {
+            RecyclerView.Adapter folderAdapter = new pictureFolderAdapter(folds, ProductUpdateActivity.this, this);
             folderRecycler.setAdapter(folderAdapter);
         }
 
@@ -171,7 +172,6 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         contractField = findViewById(R.id.contract);
         recently_addedField = findViewById(R.id.recently_added);
         plantation_areaField = findViewById(R.id.plantation_area);
-
 
 
         //----------------------------Switch Standard Plantanion--------------------------------------------------
@@ -212,18 +212,25 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         nameField.setText(nameSpiltTab[0]);
         System.out.println(nameSpiltTab[0] + "spilt");
 
-        if (product.getStandardPlantation() == null || product.getStandardPlantation().equals("Incorrect")) {
+        if (product.getStandardPlantation() == null) {
+            standardPlantationField.setBackgroundColor(Color.parseColor("#FF8C00"));
+            findViewById(R.id.standard_plantation).setBackgroundColor(Color.parseColor("#FF8C00"));
+        }
+        if (product.getStandardPlantation().equals("Typowa")) {
+            standardPlantationField.setBackgroundColor(Color.parseColor("#3da549"));
+            findViewById(R.id.standard_plantation).setBackgroundColor(Color.parseColor("#3da549"));
+        }
+        if (product.getStandardPlantation().equals("Nietypowa")) {
+
             standardPlantationField.setBackgroundColor(Color.parseColor("#FF0000"));
             findViewById(R.id.standard_plantation).setBackgroundColor(Color.parseColor("#FF0000"));
-            findViewById(R.id.standard_plantation).setBackgroundColor(Color.parseColor("#FF0000"));
-            findViewById(R.id.estimated_crop).setBackgroundColor(Color.parseColor("#FF0000"));
         }
 
-        if (product.getComment() == null) {
-
-            findViewById(R.id.comment).setBackgroundColor(Color.parseColor("#ff5130"));
-
-        }
+//        if (product.getComment() == null) {
+//
+//            findViewById(R.id.comment).setBackgroundColor(Color.parseColor("#ff5130"));
+//
+//        }
 
         System.out.println();
         if (product.getDescription() == null) {
@@ -231,35 +238,35 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
             findViewById(R.id.description).setBackgroundColor(Color.parseColor("#ff5130"));
         }
         String nameFileImage = product.getProducer() + "_" + product.getCode();
-        System.out.println(nameFileImage+"   nameFileImage ");
+        System.out.println(nameFileImage + "   nameFileImage ");
+
 
         //------------------------------------------------------------------------------------------
         System.out.println("---------------------------------------------------------------------------");
-        System.out.println(product.getProducer()   + "product.getProducer())");
-        System.out.println(product.getSpecies()   + "product.getSpecies())");
-        System.out.println(product.getName()   + "product.getName())");
-        System.out.println(product.getVariety()   + "product.getVariety())");
-        System.out.println(product.getColor()   + "product.getColor())");
-        System.out.println(product.getGroup()   + "product.getGroup())");
-        System.out.println(product.getSubgroup()   + "product.getSubgroup())");
-        System.out.println(product.getEstimatedCrop()   + "product.getEstimatedCrop())");
-        System.out.println(product.getOffPresence()   + "product.getOffPresence())");
-        System.out.println(product.getOffPercentage()   + "product.getOffPercentage())");
-        System.out.println(product.getDescription()   + "product.getDescription())");
-        System.out.println(product.getStandardPlantation()   + "product.getStandardPlantation())");
-        System.out.println(product.getComment()   + "product.getComment())");
-        System.out.println(product.getBatch()   + "product.getBatch())");
-        System.out.println(product.getCode()   + "product.getCode())");
-        System.out.println(product.getPlantationId()   + "product.getPlantationId())");
-        System.out.println(product.getDescriptionInPL()   + "product.getDescriptionInPL())");
-        System.out.println(product.getSymbol()   + "product.getSymbol())");
-        System.out.println(product.getHistorical_data()   + "product.getHistorical_data())");
-        System.out.println(product.getContract()   + "product.getContract())");
-        System.out.println(product.getRecently_added()   + "product.getRecently_added())");
+        System.out.println(product.getProducer() + "product.getProducer())");
+        System.out.println(product.getSpecies() + "product.getSpecies())");
+        System.out.println(product.getName() + "product.getName())");
+        System.out.println(product.getVariety() + "product.getVariety())");
+        System.out.println(product.getColor() + "product.getColor())");
+        System.out.println(product.getGroup() + "product.getGroup())");
+        System.out.println(product.getSubgroup() + "product.getSubgroup())");
+        System.out.println(product.getEstimatedCrop() + "product.getEstimatedCrop())");
+        System.out.println(product.getOffPresence() + "product.getOffPresence())");
+        System.out.println(product.getOffPercentage() + "product.getOffPercentage())");
+        System.out.println(product.getDescription() + "product.getDescription())");
+        System.out.println(product.getStandardPlantation() + "product.getStandardPlantation())");
+        System.out.println(product.getComment() + "product.getComment())");
+        System.out.println(product.getBatch() + "product.getBatch())");
+        System.out.println(product.getCode() + "product.getCode())");
+        System.out.println(product.getPlantationId() + "product.getPlantationId())");
+        System.out.println(product.getDescriptionInPL() + "product.getDescriptionInPL())");
+        System.out.println(product.getSymbol() + "product.getSymbol())");
+        System.out.println(product.getHistorical_data() + "product.getHistorical_data())");
+        System.out.println(product.getContract() + "product.getContract())");
+        System.out.println(product.getRecently_added() + "product.getRecently_added())");
         System.out.println("---------------------------------------------------------------------------");
 
         //------------------------------------------------------------------------------------------
-
 
 
     }
@@ -327,10 +334,6 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         System.out.println();
         historical_data = historical_data + "; " + timeStamp + " " + recently_added;
         description = timeStamp + " " + recently_added;
-
-
-
-
 
 
         return new Product(productId, producer, species, name, variety, color, group, subgroup, estimatedCrop,
@@ -573,7 +576,7 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
         String nameFileImage = product.getProducer() + "_" + product.getCode();
         String REPORTS_PHOTOS_DIR = Environment.DIRECTORY_PICTURES + "/reports_photos/" + nameFileImage;
 //        String REPORTS_PHOTOS_DIR =  nameFileImage;
-        System.out.println(Environment.DIRECTORY_PICTURES +"/"+nameFileImage + "   Environment.DIRECTORY_PICTURES");
+        System.out.println(Environment.DIRECTORY_PICTURES + "/" + nameFileImage + "   Environment.DIRECTORY_PICTURES");
 
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = file_foto_name + "_" + timeStamp;
@@ -590,9 +593,10 @@ public class ProductUpdateActivity extends AppCompatActivity implements Compound
 
         // Save a file: path for use with ACTION_VIEW intents
         mCurrentPhotoPath = image.getAbsolutePath();
-galleryAddPic();
+        galleryAddPic();
         return image;
     }
+
     private void galleryAddPic() {
         try {
             Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
@@ -681,7 +685,7 @@ galleryAddPic();
     }
 
     public void opegnJPG(View view) {
-        String name_product =returnNameFile();
+        String name_product = returnNameFile();
         String REPORTS_PHOTOS_DIR = Environment.DIRECTORY_PICTURES;
         File file = new File(REPORTS_PHOTOS_DIR);
         Uri uri_path = Uri.fromFile(file);
@@ -718,26 +722,26 @@ galleryAddPic();
         return localFile;
     }
 
-    private ArrayList<imageFolder> getPicturePaths(){
+    private ArrayList<imageFolder> getPicturePaths() {
         ArrayList<imageFolder> picFolders = new ArrayList<>();
         ArrayList<String> picPaths = new ArrayList<>();
         Uri allImagesuri = android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
-        String[] projection = { MediaStore.Images.ImageColumns.DATA ,MediaStore.Images.Media.DISPLAY_NAME,
-                MediaStore.Images.Media.BUCKET_DISPLAY_NAME,MediaStore.Images.Media.BUCKET_ID};
+        String[] projection = {MediaStore.Images.ImageColumns.DATA, MediaStore.Images.Media.DISPLAY_NAME,
+                MediaStore.Images.Media.BUCKET_DISPLAY_NAME, MediaStore.Images.Media.BUCKET_ID};
         Cursor cursor = this.getContentResolver().query(allImagesuri, projection, null, null, null);
         try {
             if (cursor != null) {
                 cursor.moveToFirst();
             }
-            do{
+            do {
                 imageFolder folds = new imageFolder();
                 String name = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DISPLAY_NAME));
                 String folder = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.BUCKET_DISPLAY_NAME));
                 String datapath = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA));
 
                 //String folderpaths =  datapath.replace(name,"");
-                String folderpaths = datapath.substring(0, datapath.lastIndexOf(folder+"/"));
-                folderpaths = folderpaths+folder+"/";
+                String folderpaths = datapath.substring(0, datapath.lastIndexOf(folder + "/"));
+                folderpaths = folderpaths + folder + "/";
                 if (!picPaths.contains(folderpaths)) {
                     picPaths.add(folderpaths);
 
@@ -746,21 +750,21 @@ galleryAddPic();
                     folds.setFirstPic(datapath);//if the folder has only one picture this line helps to set it as first so as to avoid blank image in itemview
                     folds.addpics();
                     picFolders.add(folds);
-                }else{
-                    for(int i = 0;i<picFolders.size();i++){
-                        if(picFolders.get(i).getPath().equals(folderpaths)){
+                } else {
+                    for (int i = 0; i < picFolders.size(); i++) {
+                        if (picFolders.get(i).getPath().equals(folderpaths)) {
                             picFolders.get(i).setFirstPic(datapath);
                             picFolders.get(i).addpics();
                         }
                     }
                 }
-            }while(cursor.moveToNext());
+            } while (cursor.moveToNext());
             cursor.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        for(int i = 0;i < picFolders.size();i++){
-            Log.d("picture folders",picFolders.get(i).getFolderName()+" and path = "+picFolders.get(i).getPath()+" "+picFolders.get(i).getNumberOfPics());
+        for (int i = 0; i < picFolders.size(); i++) {
+            Log.d("picture folders", picFolders.get(i).getFolderName() + " and path = " + picFolders.get(i).getPath() + " " + picFolders.get(i).getNumberOfPics());
         }
 
         //reverse order ArrayList
@@ -783,11 +787,12 @@ galleryAddPic();
      * Each time an item in the RecyclerView is clicked this method from the implementation of the transitListerner
      * in this activity is executed, this is possible because this class is passed as a parameter in the creation
      * of the RecyclerView's Adapter, see the adapter class to understand better what is happening here
+     *
      * @param pictureFolderPath a String corresponding to a folder path on the device external storage
      */
     @Override
-    public void onPicClicked(String pictureFolderPath,String folderName) {
-        String name_product =returnNameFile();
+    public void onPicClicked(String pictureFolderPath, String folderName) {
+        String name_product = returnNameFile();
 //        File file = new File(name_product);
 //        Uri uri_path = Uri.fromFile(file);
 //        String mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension
@@ -798,12 +803,12 @@ galleryAddPic();
 //        intent.setType(mimeType);
 //        intent.setDataAndType(uri_path, mimeType);
 //        startActivity(intent);
-        Intent move = new Intent(ProductUpdateActivity.this,ImageDisplay.class);
+        Intent move = new Intent(ProductUpdateActivity.this, ImageDisplay.class);
 
         String REPORTS_PHOTOS_DIR = Environment.DIRECTORY_PICTURES + "/reports_photos/" + name_product;
 
-        move.putExtra("folderPath",REPORTS_PHOTOS_DIR);
-        System.out.println(Environment.DIRECTORY_PICTURES +"/"+name_product + "  pictureFolderPath");
+        move.putExtra("folderPath", REPORTS_PHOTOS_DIR);
+        System.out.println(Environment.DIRECTORY_PICTURES + "/" + name_product + "  pictureFolderPath");
 //        move.putExtra("folderName",name_product);
 
         //move.putExtra("recyclerItemSize",getCardsOptimalWidth(4));
@@ -815,12 +820,11 @@ galleryAddPic();
      * Default status bar height 24dp,with code API level 24
      */
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    private void changeStatusBarColor()
-    {
+    private void changeStatusBarColor() {
         Window window = this.getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(ContextCompat.getColor(getApplicationContext(),R.color.black));
+        window.setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.black));
 
     }
 
