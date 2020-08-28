@@ -96,11 +96,11 @@ public class ProductAddActivity extends AppCompatActivity {
         actionBarr.setTitle("Back");
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.add, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.add, menu);
+//        return super.onCreateOptionsMenu(menu);
+//    }
 
     public void saveProduct(View view) {
         LocalDate myObj = null; // Create a date object

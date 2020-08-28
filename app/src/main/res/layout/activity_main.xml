@@ -1,132 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ProgressBar
+
+    android:indeterminate="true"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.498"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.841"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-android:background="#000000	"
-    tools:context=".MainActivity">
-
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView4"-->
-<!--        android:layout_width="472dp"-->
-<!--        android:bac-->
-<!--        android:layout_height="528dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.499"-->
-<!--       android:background="	#FFFFFF" />-->
-
-
-
-<!--    <EditText-->
-<!--        android:id="@+id/username_user"-->
-<!--        android:layout_width="289dp"-->
-<!--        android:layout_height="52dp"-->
-<!--        android:ems="10"-->
-<!--        android:inputType="textPersonName"-->
-<!--        android:hint="username"-->
-<!--        android:textColorHint="#FFFFFF"-->
-<!--        android:textColor="#000000"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/imageView4"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/imageView4"-->
-<!--        app:layout_constraintHorizontal_bias="0.655"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/imageView4"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/imageView4"-->
-<!--        app:layout_constraintVertical_bias="0.323"-->
-<!--        tools:ignore="MissingConstraints" />-->
-
-
-<!--    <EditText-->
-<!--        android:id="@+id/password_user"-->
-<!--        android:layout_width="289dp"-->
-<!--        android:layout_height="52dp"-->
-<!--        android:layout_marginBottom="208dp"-->
-<!--        android:ems="10"-->
-<!--        android:hint="password"-->
-<!--        android:textColorHint="#FFFFFF"-->
-<!--        android:textColor="#000000"-->
-<!--        android:inputType="textPassword"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/imageView4"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/imageView4"-->
-<!--        app:layout_constraintHorizontal_bias="0.655"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/imageView4"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/username_user"-->
-<!--        app:layout_constraintVertical_bias="0.161" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/form_app"-->
-<!--        android:layout_width="187dp"-->
-<!--        android:layout_height="43dp"-->
-<!--        android:text="Sign In"-->
-<!--        android:textColor="#000000"-->
-<!--        android:textSize="30dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/imageView4"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/imageView4"-->
-<!--        app:layout_constraintHorizontal_bias="0.614"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/imageView4"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/imageView4"-->
-<!--        app:layout_constraintVertical_bias="0.096" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/sign_in_menu_user"-->
-<!--        android:layout_width="399dp"-->
-<!--        android:layout_height="89dp"-->
-<!--        android:text="Sign In"-->
-<!--        android:onClick="login_to_the_application"-->
-<!--        android:background="#3da549"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/imageView4"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/imageView4"-->
-<!--        app:layout_constraintHorizontal_bias="0.506"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/imageView4"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/imageView4"-->
-<!--        app:layout_constraintVertical_bias="0.849" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView5"-->
-<!--        android:layout_width="49dp"-->
-<!--        android:layout_height="70dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/username_user"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/username_user"-->
-<!--        app:layout_constraintHorizontal_bias="1.0"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/username_user"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/username_user"-->
-<!--        app:layout_constraintVertical_bias="0.444"-->
-<!--        app:srcCompat="@drawable/user_login" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView9"-->
-<!--        android:layout_width="52dp"-->
-<!--        android:layout_height="55dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/password_user"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/password_user"-->
-<!--        app:layout_constraintHorizontal_bias="1.0"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/password_user"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/username_user"-->
-<!--        app:layout_constraintVertical_bias="1.0"-->
-<!--        app:srcCompat="@drawable/ic_vpn_key_black_24dp" />-->
-
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="477dp"
-        android:layout_height="476dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/lego" />
-
-    <ProgressBar
-        android:layout_width="99dp"
-        android:layout_height="74dp"
-        android:indeterminate="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.841" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    android:background="#000000	"
+    tools:context=".MainActivity"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+</ProgressBar>

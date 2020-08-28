@@ -60,6 +60,17 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         if (product.getStandardPlantation() == null ) {
             view.setBackgroundColor(Color.parseColor("#FFA500"));
         }
+
+        if (product.getStandardPlantation() == null) {
+            standardPlantation.setBackgroundColor(Color.parseColor("#FF8C00"));
+        }
+        if (product.getStandardPlantation().equals("Typowa")) {
+            standardPlantation.setBackgroundColor(Color.parseColor("#3da549"));
+        }
+        if (product.getStandardPlantation().equals("Nietypowa")) {
+
+            standardPlantation.setBackgroundColor(Color.parseColor("#FF0000"));
+        }
         return view;
     }
 }

@@ -98,7 +98,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="name ID"
+                        android:hint="name ID"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000"></EditText>
 
@@ -109,7 +109,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="producent ID"
+                        android:hint="producent ID"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000"></EditText>
 
@@ -120,7 +120,7 @@
                         android:layout_weight="3"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="numert reprodukcji OD"
+                        android:hint="numert reprodukcji OD"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000"></EditText>
                 </TableRow>
@@ -183,7 +183,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="nasiona wlasne ID"
+                        android:hint="nasiona wlasne ID"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000"></EditText>
 
@@ -194,7 +194,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="nazwa łacinska ID"
+                        android:hint="nazwa łacinska ID"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000"></EditText>
 
@@ -205,7 +205,7 @@
                         android:layout_weight="3"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="numert reprodukcji OD"
+                        android:hint="numert reprodukcji OD"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000"></EditText>
                 </TableRow>
@@ -278,7 +278,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="partia ID"
+                        android:hint="partia ID"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000"></EditText>
 
@@ -289,7 +289,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="grupa ID"
+                        android:hint="grupa ID"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000"></EditText>
 
@@ -300,7 +300,7 @@
                         android:layout_weight="3"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="subgrupa ID"
+                        android:hint="subgrupa ID"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000"></EditText>
                     <EditText
@@ -310,7 +310,7 @@
                         android:layout_weight="3"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="Kontrakt"
+                        android:hint="Kontrakt"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000000"></EditText>
                 </TableRow>
@@ -383,7 +383,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="kolor ID"
+                        android:hint="kolor ID"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="	#000000"/>
 
@@ -394,7 +394,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="szacowany plon ID"
+                        android:hint="szacowany plon ID"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="	#000000"/>
 
@@ -405,7 +405,7 @@
                         android:layout_weight="3"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="subgrupa ID"
+                        android:hint="subgrupa ID"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="	#000000"/>
                     <EditText
@@ -415,7 +415,7 @@
                         android:layout_weight="3"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="Pow. Plantacji"
+                        android:hint="Pow. Plantacji"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="	#000000"/>
                 </TableRow>
@@ -636,7 +636,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="Typowa"
+                        android:hint="OPIS"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="	#000000"></EditText>
 

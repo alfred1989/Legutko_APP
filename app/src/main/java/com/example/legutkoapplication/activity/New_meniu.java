@@ -31,7 +31,7 @@ public class New_meniu extends AppCompatActivity {
         setContentView(R.layout.activity_new_meniu);
         CircleMenu circleMenu = (CircleMenu) findViewById(R.id.circle_menu);
         circleMenu.setMainMenu(Color.parseColor("#258CFF"),R.drawable.ic_menu_24, R.drawable.ic_wrap_text_24)
-                .addSubMenu(Color.parseColor("#258CFF"), R.drawable.ic_home_24)
+                .addSubMenu(Color.parseColor("#258CFF"), R.drawable.ic_refre)
                 .addSubMenu(Color.parseColor("#008000"), R.drawable.ic_search_24)
                 .addSubMenu(Color.parseColor("#FF0000"), R.drawable.ic_send_24)
                 .addSubMenu(Color.parseColor("#FF1493"), R.drawable.ic_add_24)
